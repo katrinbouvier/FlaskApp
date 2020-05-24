@@ -3,20 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}">
-
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css')}}">
     <title>{% block title %}{% endblock %}</title>
 </head>
+
 <body>
-{% block body %}{% endblock %}
+
+<div id="header">
+    <p>Нейронный переводчик</p>
+</div>
+
 <div class="widget">
         <h3>Опции</h3>
         <ul>
-            <!--Что за говно вообще?-->
-            <li><a href="index.html">Переводчик</a></li>
-            <li><a href="document.html">Перевод документа</a></li>
-            <li><a href="favorites.html">Избранное</a></li>
+            <li><a href="{{url_for('index')}}">Переводчик</a></li>
+            <li><a href="{{url_for('document')}}">Перевод документа</a></li>
+            <li><a href="{{url_for('favorites')}}">Избранное</a></li>
         </ul>
     </div>
-
+{% block body %}{% endblock %}
 </body>
 </html>

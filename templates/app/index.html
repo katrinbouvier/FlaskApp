@@ -4,5 +4,52 @@
 {% endblock %}
 
 {% block body %}
-Прив
+
+
+<div class="wrapper">
+    <div class="input-block">
+
+        <table border="1" id="outer-table">
+            <thead>
+                <tr>
+                    <th>АНГЛИЙСКИЙ</th>
+                    <th id="header_ru">РУССКИЙ</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="col1" colspan="2">
+                        <form  method="post">
+                            <table border="1" id="inner-table">
+                                <tr>
+                                    <td>
+                                        <textarea rows = 20 cols=50 name="en_text" id="input" class="form-control"></textarea>
+                                     </td>
+
+                                    <td>
+                                        <textarea rows = 20 cols=50 name="ru_text" id="output" class="form-control"></textarea>
+                                    </td>
+                                    <td>
+                                        <img id="image"
+                                             width="200"
+                                             src="images/girl.jpg"
+                                             alt="star"
+                                             title="Добавить в избранное"/>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td colspan="3">
+                                        <button class="btn" type="submit">ПЕРЕВЕСТИ</button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
 {% endblock %}
