@@ -1,0 +1,69 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css');
+
+*{
+	font-family: 'Open Sans', 'sans-serif', 'FontAwesome';
+}
+body{
+    background: rgb(6, 26, 37);
+}
+#wrapper #header{
+	background: #0d4b6a;
+	position: relative;
+	text-align: center;
+	color: white;
+}
+
+#wrapper #message {
+	background: #0d4b6a;
+	position: relative;
+	/*margin-left: 20%;*/
+	color: #d4f6ff;
+	font-size: 14px;
+}
+
+#wrapper #data{
+	background: #0d4b6a;
+	/*background: green;*/
+	position: relative;
+	text-align: center;
+	padding-top: 1em;
+	padding-bottom: 1em;
+}
+
+#wrapper #data #user{
+	border-radius: 0.5em;
+	color: white;
+	background: #061a25;
+	border: none;
+	width:300px;
+	height: 25px;
+	font-size: 18px;
+}
+
+#wrapper #data #enter_btn{
+	background: #061a25;
+	height: 50px;
+	position: relative;
+	margin-top: 30px;
+	width:400px;
+	border-radius: 0.5em;
+	color:white;
+	border-style: none;
+	/*font-family: 'Open Sans';*/
+	font-size: 16px;
+}
+
+#wrapper{
+	height: 300px;
+	width:500px;
+	background: #0d4b6a;
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 1.5em;
+	border-color: #b0ccd4;
+	border-style: dashed;
+	border-width: 2px;
+}

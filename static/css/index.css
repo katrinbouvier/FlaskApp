@@ -1,0 +1,66 @@
+textarea{
+  /*display:inline-block;*/
+  width: 90%;
+  height: 200px;
+  resize: none;
+  border-width: 1px;
+  border-radius: 5px;
+  vertical-align: top;
+
+  /*margin-top: 40px;*/
+}
+
+table td {
+  text-align: center;
+  background: green;
+}
+
+#outer-table {
+  margin-top: 20px;
+  margin-left:40px;
+  background: #0d4b6a;
+}
+
+.input-block {
+  display:block;
+  position: relative;
+  float:left;
+  background: red;
+
+  /*margin:0 1.5%;*/
+
+}
+
+button {
+  color: #fff; /* цвет текста */
+  text-decoration: none; /* убирать подчёркивание у ссылок */
+  user-select: none; /* убирать выделение текста */
+  background: rgb(20, 132, 212); /* фон кнопки */
+  font-family: 'Roboto', sans-serif;
+  padding: .7em 1.5em; /* отступ от текста */
+  /*outline: none; !* убирать контур в Mozilla *!*/
+  margin-top:10px;
+  outline-width: 0;
+  width:350px;
+  height:50px;
+}
+
+button:hover {
+  background: rgb(63, 161, 212);
+}
+
+button:active {
+  background: rgb(54, 90, 212);
+}
+
+#header_ru {
+  width:420px;
+  background: deeppink;
+}
+
+#image {
+  height:20px;
+  width:20px;
+  background: hotpink;
+
+}

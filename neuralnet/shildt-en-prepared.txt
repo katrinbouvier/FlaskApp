@@ -1,0 +1,1063 @@
+Finally, the components are added to the content pane.
+Although  this example is quite simple, this same general approach must be used when building any  Swing GUI that will be used by an applet.
+Although many (perhaps most) uses of Swing will not  involve drawing directly to the surface of a component, it is available for those applications  that need this capability.
+However, there are also some very important differences, and the process is discussed in  detail in this section.
+Swing�s approach to painting is built on the original AWT-based mechanism, but Swing�s  implementation offers more finally grained control.
+Before examining the specifics of  Swing-based painting, it is useful to review the AWT-based mechanism that underlies it.
+In fact, only in the most unusual cases should it ever be called by your program.
+This situation can occur for several reasons.
+For example, the window in which the component  is displayed can be overwritten by another window and then uncovered.
+Or, the window might  be minimized and then restored.
+However, you will not override it to paint directly to the surface of a  component.
+These methods paint the indicated portion of a component and divide the painting process  into its three distinct, logical actions.
+This is the method that paints the interior  of the component.
+You will not normally override the other two painting methods.
+The only time this is not  required is when you are taking complete, manual control over how a component is  displayed.
+Because painting is a  time-consuming operation, this mechanism allows the run-time system to defer painting  momentarily until some higher-priority task has completed, for example.
+Although Swing automatically clips any output that will  exceed the boundaries of a component, it is still possible to paint into the border, which will  then get overwritten when the border is drawn.
+To avoid this, you must compute the paintable  area of the component.
+This is the area defined by the current size of the component minus  the space used by the border.
+Therefore, before you paint to a component, you must obtain  the width of the border and then adjust your drawing accordingly.
+It returns an Insets  object that contains the dimensions of the border.
+The program then uses an object of that class to display  lines whose endpoints have been generated randomly.
+The size of the panel is not specified because the program uses the  default border layout and the panel is added to the center.
+This results in the panel being  sized to fill the center.
+If you change the size of the window, the size of the panel will be  adjusted accordingly.
+As explained, this is necessary to ensure that the component is properly drawn.
+Next, the width  and height of the panel are obtained along with the insets.
+These values are used to ensure the  lines lie within the drawing area of the panel.
+The drawing area is the overall width and height  of a component less the border width.
+To prove this, try changing the size of the window.
+The lines will  still all lie within the borders of the panel.
+Each time you resize or hide and restore the window, a new set of  lines are drawn.
+In all cases, the lines fall within the paintable area.
+This chapter continues  the discussion of Swing by presenting an overview of several Swing components, such as  buttons, check boxes, trees, and tables.
+The Swing components provide rich functionality  and allow a high level of customization.
+Because of space limitations, it is not possible to  describe all of their features and attributes.
+Rather, the purpose of this overview is to give  you a feel for the capabilities of the Swing component set.
+One other point: The Swing components are demonstrated in applets because the code  for an applet is more compact than it is for a desktop application.
+However, the same  techniques apply to both applets and applications.
+It creates a label and was introduced in the  preceding chapter.
+The align argument specifies the  horizontal alignment of the text and/or icon within the dimensions of the label.
+There are several ways to provide  the image, including reading it from a file or downloading it from a URL.
+The following applet illustrates how to create and display a label containing both an  icon and a string.
+It begins by creating an ImageIcon object for the file hourglass.
+Finally, the label is added to the content pane.
+In many cases, your program will not need to handle these events.
+Instead,  you will simply obtain the string currently in the text field when it is needed.
+When the user presses enter, an action event is generated.
+This is handled  by displaying the text in the status window.
+Thus, all buttons  share a set of common traits.
+For example, you can define different icons that are displayed for the button when it is  disabled, pressed, or selected.
+Another icon can be used as a rollover icon, which is displayed  when the mouse is positioned over a button.
+The model used by all buttons is defined by the ButtonModel interface.
+A button  generates an action event when it is pressed.
+Other events are possible.
+Each of the  concrete button classes is examined next.
+You have already seen a  simple form of it in the preceding chapter.
+By default, this is the string displayed  inside the button.
+Thus, when using two or more buttons within  the same application, the action command gives you an easy way to determine which button  was pressed.
+In the preceding chapter, you saw an example of a text-based button.
+The following  demonstrates an icon-based button.
+It displays four push buttons and a label.
+When a button is pressed, the name   of that timepiece is displayed in the label.
+A toggle button looks just like  a push button, but it acts differently because it has two states: pushed and released.
+That is,  when you press a toggle button, it stays pressed rather than popping back up as a regular  push button does.
+When you press the toggle button a second time, it releases (pops up).
+Therefore, each time a toggle button is pushed, it toggles between its two states.
+By default, the button is in  the off position.
+Other constructors enable you to create toggle buttons that contain  images, or images and text.
+Normally, you won�t need to interact directly with the model to use a  standard toggle button.
+This event is used by those  components that support the concept of selection.
+When it is popped out, it is deselected.
+Here is an example that uses a toggle button.
+Notice how the item listener works.
+Other constructors let you  specify the initial selection state of the button and specify an icon.
+The following example illustrates check boxes.
+It displays four check boxes and a label.
+When the user clicks a check box, an ItemEvent is generated.
+Other constructors let you specify the initial selection  state of the button and specify an icon.
+In order for their mutually exclusive nature to be activated, radio buttons must be  configured into a group.
+Only one of the buttons in the group can be selected at any time.
+For example, if a user presses a radio button that is in a group, any previously selected  button in that group is automatically deselected.
+Its default constructor is invoked for this purpose.
+Inside this method, you can use a number  of different ways to determine which button was selected.
+Finally, each button could use its own action event handler implemented as either  an anonymous inner class or a lambda expression.
+Remember, each time an action event  occurs, it means that the button being selected has changed and that one and only one  button will be selected.
+The following example illustrates how to use radio buttons.
+Three radio buttons are  created.
+The buttons are then added to a button group.
+As explained, this is necessary to  cause their mutually exclusive behavior.
+It manages a set of components by linking them  with tabs.
+Selecting a tab causes the component associated with that tab to come to the  forefront.
+Tabbed panes are very common in the modern GUI, and you have no doubt used  them many times.
+Given the complex nature of a tabbed pane, they are surprisingly easy to  create and use.
+We will use its default constructor, which  creates an empty control with the tabs positioned across the top of the pane.
+The other two constructors let you specify the location of the tabs, which can be along any of the four  sides.
+This technique allows a tab to hold a set of components.
+Add the tabbed pane to the content pane.
+The following example illustrates a tabbed pane.
+Each button displays the name of a city.
+Each check box displays the name of a color.
+This enables the user to select one  of three flavors.
+In either case, if the object being scrolled is larger than the viewable area, horizontal  and/or vertical scroll bars are automatically provided, and the component can be scrolled  through the pane.
+The viewable area of a scroll pane is called the viewport.
+It is a window in which the  component being scrolled is displayed.
+Thus, the viewport displays the visible portion of   the component being scrolled.
+The scroll bars scroll the component through the viewport.
+For example, if the component is taller than the viewport, a vertical scroll bar is added.
+If  the component will completely fit within the viewport, the scroll bars are removed.
+Scroll bars are automatically displayed  when the content of the pane exceeds the dimensions of the viewport.
+Create the component to be scrolled.
+Add the scroll pane to the content pane.
+The following example illustrates a scroll pane.
+This panel is then added to a scroll  pane, and the scroll pane is added to the content pane.
+Because the panel is larger than the  viewport, vertical and horizontal scroll bars appear automatically.
+You can use the scroll  bars to scroll the buttons into view.
+It supports the selection of one or more items  from a list.
+Although the list often consists of strings, it is possible to create a list of just  about any object that can be displayed.
+This interface defines how access   to the list data is achieved.
+This way, long lists will automatically be scrollable, which simplifies GUI  design.
+This  event is also generated when the user deselects an item.
+With single-interval selection, the user can select one range of items.
+Of course, a single item can be selected   in the other two modes, too.
+It�s just that they also allow a range to be selected.
+So, if the first item is selected, this method will return 0.
+If no item  is selected, �1 is returned.
+If no value has been selected, it returns null.
+The following applet demonstrates a simple JList, which holds a list of cities.
+It responds by obtaining the  index of the selected item and displaying the name of the selected city in a label.
+A combo box normally displays one entry, but it will also display a drop-down list that allows a user to select a different entry.
+You can also create a combo box that  lets the user enter a selection into the text field.
+Other constructors are available.
+This method must be used only with  mutable combo boxes.
+Thus, changing a selection means that two item  events will occur: one for the deselected item and another for the selected item.
+Often, it is  sufficient to simply listen for action events, but both event types are available for your use.
+The following example demonstrates the combo box.
+When a timepiece is selected, an  icon-based label is updated to display it.
+You can see how little code is required to use this  powerful component.
+It provides  several constructors and methods.
+It  returns a string that describes the path.
+For example, it is possible to obtain a reference to the parent node or an enumeration of  the child nodes.
+It declares methods  that can insert and remove child nodes or change the parent node.
+It  represents a node in a tree.
+The new tree node doesn�t have a  parent or children.
+This way, a large tree can be scrolled through a smaller viewport.
+Add the tree to the scroll pane.
+Add the scroll pane to the content pane.
+The following example illustrates how to create a tree and handle selections.
+This is the top  node of the tree hierarchy.
+This scroll pane is then added to the content  pane.
+Next, a label is created and added to the content pane.
+The tree selection is displayed  in this label.
+You can drag the cursor   on column boundaries to resize columns.
+You can also drag a column to a new position.
+Depending on its configuration, it is also possible to select a row, column, or cell within the  table, and to change the data within a cell.
+It is a component that consists of one or more  columns of information.
+At the top of each column is a heading.
+In addition to describing  the data in a column, the heading also provides the mechanism by which the user can  change the size of a column or change the location of a column within the table.
+This model defines those things related to displaying data in a  two-dimensional format.
+Handling these events requires a bit more work than it does to  handle the events generated by the previously described components and is beyond the  scope of this book.
+Add the table to the scroll pane.
+Add the scroll pane to the content pane.
+The following example illustrates how to create and use a simple table.
+A two-dimensional array  of strings called data is created for the table cells.
+You can see that each element in the array is  an array of three strings.
+The table is added  to a scroll pane, and then the scroll pane is added to the content pane.
+The table displays the  data in the data array.
+The default table configuration also allows the contents of a cell to be  edited.
+Changes affect the underlying array, which is data in this case.
+Menus form an integral part of many applications because they present the program�s  functionality to the user.
+Because of their importance, Swing provides extensive support for  menus.
+They are an area in which Swing�s power is readily apparent.
+The menu bar, which is the main menu for an application.
+The standard menu, which can contain either items to be selected or other menus  (submenus).
+The popup menu, which is usually activated by right-clicking the mouse.	 
+The toolbar, which provides rapid access to program functionality, often paralleling  menu items. 
+The action, which enables two or more different components to be managed by a  single object.
+Swing menus also support accelerator keys, which enable menu items to be selected without  having to activate the menu, and mnemonics, which allow a menu item to be selected by  the keyboard once the menu options are displayed.
+Although  they may seem a bit confusing at first, Swing menus are quite easy to use.
+Swing allows a  high degree of customization, if desired; however, you will normally use the menu classes   as-is because they support all of the most needed options.
+For example, you can easily add  images and keyboard shortcuts to a menu.
+This class is, loosely speaking, a  container for menus.
+As an alternative or adjunct to menus that descend from the menu bar, you can also  create stand-alone, popup menus.
+A popup menu is normally activated by clicking  the right mouse button when the mouse is over a component for which a popup menu has  been defined.
+In addition to �standard� menu items, you can also include check boxes and radio  buttons in a menu.
+They can be used in standard menus and popup menus.
+It is often used  to provide fast access to functionality contained within the menus of the application.
+For  example, a toolbar might provide fast access to the formatting commands supported by a  word processor.
+Thus, all menu items are, essentially, buttons.
+Obviously, they  won�t actually look like buttons when used in a menu, but they will, in many ways, act like  buttons.
+For example, selecting a menu item generates an action event in the same way that  pressing a button does.
+This allows the creation  of submenus, which are, essentially, menus within menus.
+You will see  this process in action in the following section.
+As mentioned in passing previously, when a menu item is selected, an action event is  generated.
+The action command string associated with that action event will, by default, be  the name of the selection.
+Of course, you can also use separate anonymous inner classes or  lambda expressions to handle each menu item�s action events.
+In this case, the menu  selection is already known, and there is no need to examine the action command string to  determine which item was selected.
+Menus can also generate other types of events.
+In many cases, however, you need only watch for action events, and  in this chapter, we will use only action events.
+These form the minimum set of classes needed  to construct a main menu for an application.
+Thus, these classes form the foundation of the menu system.
+It has only one constructor, which  is the default constructor.
+Therefore, initially the menu bar will be empty, and you will need  to populate it with menus prior to use.
+Each application has one and only one menu bar.
+A reference to the menu is  returned.
+Menus are positioned in the bar from left to right, in the order in which they are  added.
+Indexing begins at 0, with 0 being the  left-most menu.
+In some cases, you might want to remove a menu that is no longer needed.
+Indexing begins at zero.
+The menu bar will be displayed in a position  determined by the look and feel.
+Usually, this is at the top of the window.
+This enables one menu to be a submenu of another.
+Of course, you don�t  have to give a menu a name.
+In each case, the menu is empty until menu items  are added to it.
+Here is a brief description of some commonly used ones.
+The first form adds the item to the end of the menu.
+As expected, indexing starts at  zero.
+Both forms return a reference to the item added.
+Therefore, when a menu item is selected, an action  event is generated.
+The second  creates a menu item that displays the image specified by image.
+The third creates a menu  item with the name specified by name and the image specified by image.
+The fourth creates  a menu item with the name specified by name and uses the keyboard mnemonic specified  by mnem.
+This mnemonic enables you to select an item from the menu by pressing the  specified key.
+The last constructor creates a menu item using the information specified in  action.
+A default constructor is also supported.
+This is the menu defined by  the menu bar, and it is the menu that defines all (or nearly all) of the functionality of an  application.
+Fortunately, Swing makes creating and managing the main menu easy.
+This  section shows you how to construct a basic main menu.
+Subsequent sections will show you  how to add options to it.
+Constructing the main menu requires several steps.
+Next, construct each menu that will be in the menu bar.
+After the menus have been created, add them to the menu bar.
+Finally, for each menu item,  you must add an action listener that handles the action event fired when the menu item is  selected.
+A good way to understand the process of creating and managing menus is to work  through an example.
+Here is a program that creates a simple menu bar that contains three  menus.
+When a menu item is selected,  the name of the selection is displayed in a label in the content pane.
+This  method causes the immediate termination of a program and passes its argument as a status  code to the calling process, which is usually the operating system or the browser.
+By  convention, a status code of zero means normal termination.
+Anything else indicates that  the program terminated abnormally.
+For all other menu selections, the choice is displayed.
+Try  adding another menu or adding additional items to an existing menu.
+It is important that  you understand the basic menu concepts before moving on because this program will  evolve throughout the course of this chapter.
+In real applications, a menu usually includes support for keyboard shortcuts because  they give an experienced user the ability to select menu items rapidly.
+Keyboard shortcuts  come in two forms: mnemonics and accelerators.
+As it applies to menus, a mnemonic defines  a key that lets you select an item from an active menu by typing the key.
+Thus, a mnemonic  allows you to use the keyboard to select an item from a menu that is already being displayed.
+An accelerator is a key that lets you select a menu item without having to first activate the menu.
+In the first version, the character is specified as  a char value.
+The value of modifier must be one or more of  the following constants, defined in the java.
+The second creates  a menu item with the name specified by name and the image specified by image.
+Normally, when a menu item is disabled, the default icon is  shown in gray.
+If a disabled icon is specified, then that icon is displayed when the menu  item is disabled.
+A tooltip is a small message that describes an item.
+It is automatically displayed if the  mouse remains over the item for a moment.
+This means you can add a tooltip to other types of components, such as a push button.
+You  might want to try this on your own.
+These items  can streamline a GUI by allowing a menu to provide functionality that would otherwise  require additional, stand-alone components.
+Also, sometimes, including check boxes or  radio buttons in a menu simply seems the most natural place for a specific set of features.
+Whatever your reason, Swing makes it easy to use check boxes and radio buttons in menus,  and both are examined here.
+It defines several  constructors.
+The initial state of the check box is unchecked.
+Otherwise, it is cleared.
+The item is initially unchecked.
+Other constructors are also supported.
+Check boxes in menus work like stand-alone check boxes.
+For example, they generate  action events and item events when their state changes.
+Check boxes are especially useful in  menus when you have options that can be selected and you want to display their selected/ deselected status.
+Typically, a popup  menu is activated by clicking the right mouse button when over a component.
+The other constructor lets you specify a title for the menu.
+Whether this title is displayed is subject to the look and feel.
+It provides a   rich assortment of constructors.
+The second lets you specify the initial state of the button.
+If state is  true, the button is initially selected.
+Otherwise, it is deselected.
+Other constructors let you  specify an icon.
+If state is true, the button is initially selected.
+Otherwise, it is  deselected.
+Several other constructors are supported.
+Like stand-alone radio buttons, menu-based radio buttons must be put into a  button group in order for them to exhibit mutually exclusive selection behavior.
+Aside from having the extra  capabilities of check boxes and radio buttons, they act like and are used like other menu  items.
+Typically, a popup  menu is activated by clicking the right mouse button when over a component.
+The other constructor lets you specify a title for the menu.
+Whether this title is displayed is subject to the look and feel.
+Menu item selections are also handled in the same  way: by listening for action events.
+The main difference between a popup menu and regular  menu is the activation process.
+Activating a popup menu requires three steps.
+You must register a listener for mouse events.
+Inside the mouse event handler, you must watch for the popup trigger.
+Let�s examine each of these steps closely.
+A popup menu is normally activated by clicking the right mouse button when the  mouse pointer is over a component for which a popup menu is defined.
+Thus, the popup  trigger is usually caused by right-clicking the mouse on a popup menu�enabled component.
+Depending on the installed look and feel, either of these two events  can trigger a popup menu.
+These are used to specify the upper-left corner of the popup menu when  it is displayed.
+You will use this method to determine when to pop up  the menu.
+Popup menus are not  added to the menu bar or any other object.
+This means that a right-button click inside any  part of the content pane will trigger the popup menu.
+In this case, the invoker will be the content pane.
+This makes the menu pop up with its  upper-left corner directly under the mouse pointer.
+Finally, you also need to add these action listeners to the program.
+They handle the  action events fired when the user selects an item from the popup menu.
+A toolbar contains a list of buttons (or other components) that give the user immediate  access to various program options.
+For example, a toolbar might contain buttons that select  various font options, such as bold, italics, highlight, or underline.
+These options can be  selected without needing to drop through a menu.
+Typically, toolbar buttons show icons  rather than text, although either or both are allowed.
+Furthermore, tooltips are often  associated with icon-based toolbar buttons.
+Its constructors enable you to  create a toolbar with or without a title.
+You can also specify the layout of the toolbar, which  will be either horizontal or vertical.
+The second creates a  horizontal toolbar with the title specified by title.
+The title will show only when the toolbar is  dragged out of its window.
+The third creates a toolbar that is oriented as specified by how.
+The  fourth constructor creates a toolbar that has the title specified by title and is oriented as  specified by how.
+A toolbar is typically used with a window that uses a border layout.
+There are two  reasons for this.
+First, it allows the toolbar to be initially positioned along one of the four  border positions.
+Frequently, the top position is used.
+Second, it allows the toolbar to be  dragged to any side of the window.
+In addition to dragging the toolbar to different locations within a window, you can also  drag it out of the window.
+Doing so creates an undocked toolbar.
+If you specify a title when  you create the toolbar, then that title will be shown when the toolbar is undocked.
+You add buttons (or other components) to a toolbar in much the same way that you  add them to a menu bar.
+The components are shown in the toolbar in  the order in which they are added.
+Once you have created a toolbar, you do not add it to the menu bar (if one exists).
+Instead, you add it to the window container.
+As mentioned, typically you will add a toolbar  to the top (that is, north) position of a border layout, using a horizontal orientation.
+The  component that will be affected is added to the center of the border layout.
+Using this  approach causes the program to begin running with the toolbar in the expected location.
+However, you can drag the toolbar to any of the other positions.
+Of course, you can also  drag the toolbar out of the window.
+The toolbar will  present three debugging options: set a breakpoint, clear a breakpoint, and resume program  execution.
+Three steps are needed to add the toolbar.
+Let�s look at this code closely.
+Next, three toolbar buttons are created.
+Notice that each has an image, but no text.
+Also,  each is explicitly given an action command and a tooltip.
+The buttons are then added to the toolbar, and  the toolbar is added to the north side of the border layout of the frame.
+Each time the user presses a toolbar button, an action event is fired, and it is handled in the  same way as the other menu-related events.
+In such a case, selecting an option (such as setting a breakpoint)  causes the same action to occur, independently of whether the menu or the toolbar was  used.
+Also, both the toolbar button and the menu item would (most likely) use the same  icon.
+Furthermore, when a toolbar button is disabled, the corresponding menu item would  also need to be disabled.
+Such a situation would normally lead to a fair amount of  duplicated, interdependent code, which is less than optimal.
+Fortunately, Swing provides   a solution: the action.
+This combination allows one action to manage two or more components.
+For example, an action lets you centralize the control and handling of a toolbar button and  a menu item.
+Instead of having to duplicate code, your program need only create an action  that automatically handles both components.
+This handler will process the action events generated by  the objects linked to the action.
+An action command is specified as a string.
+This is an  Integer value.
+The icon is specified as an object of  type Icon.
+This description is specified as a string.
+Represents the name of the action (which  also becomes the name of the button or  menu item to which the action is linked).
+The name is specified as a string.
+If set, the  item is selected.
+The state is represented by a  Boolean value.
+The tooltip text is specified as a  string.
+The icon is specified as an object of  type Icon.
+Otherwise, it is disabled.
+Otherwise, it returns false.
+The same actions that support these items in  the toolbar will also support these items in the menu.
+Therefore, instead of having to create  duplicate code to handle both the toolbar and menu, both are handled by the actions.
+Use the actions to create the items.
+Thus, changing a property in the action  (such as disabling it) will affect all uses of that action.
+Before concluding, it will be  helpful to assemble all the pieces.
+Doing so not only eliminates any ambiguity about the way  the pieces fit together, but it also gives you a complete menu demonstration program that  you can experiment with.
+For clarity, the program has been reorganized, with separate  methods being used to construct the various menus and toolbar.
+It has many more features that you will want to  explore on your own.
+You will also want to experiment with defining your own models for the  various components.
+Frankly, the best way to become familiar with Swing�s capabilities is to  experiment with it.
+This also applies to its  libraries.
+One of the most important examples of this evolutionary process is found in its  GUI frameworks.
+As explained earlier in the book, the original GUI framework was the AWT.
+Because of its several limitations, it was soon followed by Swing, which offered a far superior  approach to creating GUIs.
+Swing was so successful that it has remained the primary Java  GUI framework for over a decade.
+And a decade is a long time in the fast-moving world of  programming!
+However, Swing was designed when the enterprise application dominated  software development.
+Today, consumer applications, and especially mobile apps, have risen  in importance, and such applications often demand a GUI that has visual sparkle.
+Furthermore, no matter the type of application, the trend is toward more exciting visual  effects.
+To better handle these types of GUIs, a new approach was needed, and this lead to  the creation of JavaFX.
+JavaFX is Java�s next-generation client platform and GUI framework.
+JavaFX provides a powerful, streamlined, flexible framework that simplifies the creation  of modern, visually exciting GUIs.
+Instead, the  purpose of this and the next two chapters is to introduce several of its key features and  techniques.
+Once you understand the fundamentals, you will find it easy to explore other  aspects of JavaFX on your own.
+However, given the large amount of  Swing legacy code and the legions of programmers who know how to program for Swing,  Swing will be in use for a very long time.
+This is especially true for enterprise applications.
+Nevertheless, JavaFX has clearly been positioned as the platform of the future.
+It is expected  that, over the next few years, JavaFX will supplant Swing for new projects.
+JavaFX is  something that no Java programmer can afford to ignore.
+Before continuing, it is important to mention that the development of JavaFX occurred  in two main phases.
+For example, JavaFX  is lightweight.
+It can also support an MVC architecture.
+Much of what you already know  about creating GUIs using Swing is conceptually applicable to JavaFX.
+That said, there are  significant differences between the two.
+From a programmer�s point of view, the first differences you notice between JavaFX and  Swing are the organization of the framework and the relationship of the main components.
+Simply put, JavaFX offers a more streamlined, easier-to-use, updated approach.
+JavaFX also  greatly simplifies the rendering of objects because it handles repainting automatically.
+It is  no longer necessary for your program to handle this task manually.
+The preceding is not  intended to imply that Swing is poorly designed.
+It is not.
+It is just that the art and science  of programming has moved forward, and JavaFX has received the benefits of that evolution.
+Simply put, JavaFX facilitates a more visually dynamic approach to GUIs.
+Although we will only use a few of these packages in this chapter, you will want to spend  some time browsing their capabilities.
+JavaFX offers a wide array of functionality.
+As in the case of an actual stage  play, a stage contains a scene.
+Thus, loosely speaking, a stage defines a space and a scene  defines what goes in that space.
+Or, put another way, a stage is a container for scenes and a  scene is a container for the items that comprise the scene.
+As a result, all JavaFX applications  have at least one stage and one scene.
+Let�s look a bit more closely at these two classes.
+The primary stage is supplied by the run-time system when a  JavaFX application is started.
+Although you can create other stages, for many applications,  the primary stage will be the only one required.
+These can  consist of controls, such as push buttons and check boxes, text, and graphics.
+For example, a push button control is a  node.
+However, nodes can also consist of groups of nodes.
+Furthermore, a node can have a  child node.
+In this case, a node with a child is called a parent node or branch node.
+Nodes  without children are terminal nodes and are called leaves.
+The collection of all nodes in a  scene creates what is referred to as a scene graph, which comprises a tree.
+There is one special type of node in the scene graph, called the root node.
+This is the   top-level node and is the only node in the scene graph that does not have a parent.
+Thus,  with the exception of the root node, all other nodes have parents, and all nodes either directly  or indirectly descend from the root node.
+It is used to perform  various initializations.
+As will be explained, however, it cannot be used to create a stage or  build a scene.
+If no initializations are required, this method need not be overridden because  an empty, default version is provided.
+This is where your application begins and it  can be used to construct and set the scene.
+This is the stage provided by the run-time system and is the primary stage.
+You can  also create other stages, but you won�t need to for simple applications.
+Notice that this  method is abstract.
+Thus, it must be overridden by your application.
+It is here that you  can handle any cleanup or shutdown chores.
+In cases in which no such actions are needed,  an empty, default version is provided.
+It has two forms.
+However, its inclusion often simplifies the test/debug  cycle, and it lets the program be used without the creation of a JAR file.
+Thus, it is included  in all of the JavaFX programs in this book.
+Therefore, before looking at any more  JavaFX features, it will be useful to see what that skeleton looks like.
+In addition to showing  the general form of a JavaFX application, the skeleton also illustrates how to launch the  application and demonstrates when the life-cycle methods are called.
+A message noting  when each life-cycle method is called is displayed on the console.
+They do so here simply to illustrate when each method is called.
+It is here that the initial scene is  created and set to the primary stage.
+Let�s look at this method line-by-line.
+It is to this stage that you will set a scene  for the application.
+This title becomes the name of the main application window.
+Next, a root node for a scene is created.
+The root node is the only node in a scene  graph that does not have a parent.
+This is a layout in  which elements are positioned line-by-line, with lines wrapping as needed.
+Although not needed by this skeletal  application, it is also possible to specify other layout properties, such as a vertical and  horizontal gap between elements, and an alignment.
+You will see an example of this later in this chapter.
+The one used here creates a scene that  has the specified root with the specified width and height.
+Also notice that the width and the height are double values.
+This  lets you pass fractional values, if needed.
+One important advantage of JavaFX is that the same program can be run in a variety of  different execution environments.
+For example, you can run a JavaFX program as a  stand-alone desktop application, inside a web browser, or as a Web Start application.
+However,  different ancillary files may be needed in some cases, for example, an HTML file or a Java  Network Launch Protocol (JNLP) file.
+However, because  of the need for additional support for various execution environments, the easiest way to  compile a JavaFX application is to use an Integrated Development Environment (IDE) that  fully supports JavaFX programming, such as NetBeans.
+Just follow the instructions for the  IDE you are using.
+Alternatively, if you want to compile and test a JavaFX application using the command- line tools, you can easily do so.
+Just compile and run the application in the normal way,  using javac and java.
+Be aware that using the command-line compiler neither creates any  HTML or JNLP files that would be needed if you want to run the application in a way other  than as a stand-alone application, nor does it create a JAR file for the program.
+You also cannot create these items inside the application�s  constructor.
+The reason is that a stage or scene must be constructed on the application  thread.
+Thus, they can�t be used to construct a stage  or scene.
+Furthermore, any changes to the GUI currently displayed must be made from the  application thread.
+Fortunately, in JavaFX, events are sent to your program on the application  thread.
+Therefore, event handlers can be used to interact with the GUI.
+As you would expect, JavaFX supplies a rich assortment  of controls.
+The simplest control is the label because it just displays a message, which, in  this example, is text.
+Although quite easy to use, the label is a good way to introduce the  techniques needed to begin building a scene graph.
+As  you know, most GUI controls generate events that are handled by your program.
+For  example, buttons, check boxes, and lists all generate events when they are used.
+In many  ways, event handling in JavaFX is similar to event handling in Swing or the AWT, but it�s  more streamlined.
+Therefore, if you already are proficient at handling events for these  other two GUIs, you will have no trouble using the event handling system provided by  JavaFX.
+One commonly used control is the button.
+It handles action events generated by a button.
+In general, JavaFX uses what is, in essence, the delegation event model approach to event  handling.
+To handle an event, you must first register the handler that acts as a listener for  the event.
+When the event occurs, the listener is called.
+It must then respond to the event  and return.
+Typically, event handlers are implemented  through anonymous inner classes or lambda expressions, but you can use stand-alone  classes for this purpose if it is more appropriate to your application (for example, if one  event handler will handle events from more than one source).
+Although not required by the examples in this chapter, it is sometimes useful to know  the source of an event.
+This is especially true if you are using one handler to handle events  from different sources.
+When an  event is consumed, it stops the event from being passed to a parent handler.
+One last point: In JavaFX, events are processed via an event dispatch chain.
+When an  event is generated, it is passed to the root node of the chain.
+The event is then passed down  the chain to the target of the event.
+After the target node processes the event, the event is  passed back up the chain, thus allowing parent nodes a chance to process the event, if  necessary.
+This is called event bubbling.
+It is possible for a node in the chain to consume an  event, which prevents it from being further processed.
+NOTE Although not used in this introduction to JavaFX, an application can also implement an event  filter, which can be used to manage events.
+A filter can consume an event, thus preventing further processing.
+Furthermore, it supports a  wide array of options.
+However, here we will use its default form.
+In this chapter, we will use text-based buttons.
+An example of a graphics- based button is shown in the next chapter.
+As mentioned, often you will use an anonymous  inner class or lambda expression for the handler.
+As with all other Java event  handling, your handler must respond to the event as fast as possible and then return.
+If  your handler consumes too much time, it will noticeably slow down the application.
+For  lengthy operations, you must use a separate thread of execution.
+It uses two buttons and a label.
+Each  time a button is pressed, the label is set to display which button was pressed.
+This is because it is accessed within the button event handlers, which are  anonymous inner classes.
+There are two other things of interest in this program that relate to the way the controls  are displayed in the window.
+These specify the horizontal and  vertical gap that will be left around elements in the scene.
+If these gaps are not specified,  then two elements (such as two buttons) would be positioned in such a way that no space  is between them.
+Thus, the controls would run together, creating a very unappealing user  interface.
+Other alignments are possible.
+Before moving on, one more point needs to be made.
+The preceding program used  anonymous inner classes to handle button events.
+Notice that the lambda expression is more compact than the anonymous inner class.
+Because lambda expressions are a new feature just recently added to Java, but the anonymous  inner class is a widely used construct, readily understood by nearly all Java programmers,  the event handlers in subsequent examples will use anonymous inner classes.
+This will also  allow the examples to be compiled by readers using JDK 7 (which does not support lambdas).
+However, on your own, you might want to experiment with converting them to lambda  expressions.
+It is a good way to gain experience using lambdas in your own code.
+This is one of the most important ways that JavaFX improves  on Swing.
+Furthermore, your application needs to store the window  contents, redrawing them when painting is requested.
+JavaFX eliminates this tedious  mechanism because it keeps track of what you display in a scene and redisplays that scene  as needed.
+This is called retained mode.
+Rendering is automatic.
+When you draw something, such as a line, on a canvas, JavaFX  automatically renders it whenever it needs to be redisplayed.
+Before you can draw on a canvas, you must perform two steps.
+If sophisticated graphics programming is in your future,  you will definitely want to study its capabilities closely.
+For our purposes, we will use only a  few of its methods, but they will give you a sense of its power.
+They are described here.
+The width and height parameters specify  its width and height.
+The current fill can be  as simple as a solid color or something more complex.
+The width and  height parameters specify its width and height.
+To  draw a circle, pass the same value for width and height.
+By default, the system font is used.
+Its subclasses define fills and strokes.
+The following program uses the aforementioned methods to demonstrate drawing on a  canvas.
+It first displays a few graphic objects on the canvas.
+If you run the program,  you will see that the shapes whose color is not changed are unaffected by the change in  color of the other objects.
+Furthermore, if you try covering and then uncovering the window,  you will see that the canvas is automatically repainted, without any other actions on the part  of your program.
+For example, you can apply various  transforms, rotations, and effects.
+Despite its power, its various features are easy to master  and use.
+One other point: A canvas is transparent.
+Therefore, if you stack canvases, the  contents of both will show.
+This may be useful in some situations.
+In the process, it introduced two controls: the label and the button.
+This chapter  continues the discussion of JavaFX controls.
+It begins by describing how to include images  in a label and button.
+It then presents an overview of several more JavaFX controls, including  check boxes, lists, and trees.
+Keep in mind that JavaFX is a rich and powerful framework.
+The purpose of this chapter is to introduce a representative sampling of the JavaFX controls  and to describe several common techniques.
+Once you understand the basics, you will be  able to easily learn the other controls.
+For example, in addition to text, you  can specify an image in a label or a button.
+Furthermore, you can embed stand-alone images  in a scene directly.
+The argument is assumed  to refer to a path if it does not constitute a properly formed URL.
+Otherwise, the image is  loaded from the URL.
+The examples that follow will load images from files on the local file  system.
+One other point: Image is not derived from Node.
+Thus, it cannot, itself, be part of  a scene graph.
+It can display a  text message, a graphic, or both.
+So far, we have used it to display only text, but it is easy to  add an image.
+Here is a program that demonstrates a label that includes a graphic.
+This might be  useful if your application wants to use an image at some times, and not at others, for example.
+If you want only an image, you can simply display it without using a label, as described in  the previous section. 
+There, you saw an example of a button that contained text.
+Although such buttons  are common, you are not limited to this approach because you can include an image.
+You  can also use only the image if you choose.
+The procedure for adding an image to a button  is similar to that used to add an image to a label.
+Then add it to the button.
+Here is an example that displays two buttons that contain images.
+The first shows an  hourglass.
+The second shows an analog clock.
+When a button is pressed, the selected  timepiece is reported.
+Notice that the text is displayed beneath the image.
+A toggle button looks just  like a push button, but it acts differently because it has two states: pushed and released.
+That is, when you press a toggle button, it stays pressed rather than popping back up as a  regular push button does.
+When you press the toggle button a second time, it releases  (pops up).
+Therefore, each time a toggle button is pushed, it toggles between these two  states.
+Another constructor allows you to include an  image.
+When the button is pressed, the option is selected.
+For this reason, a program usually needs to determine  the toggle button�s state.
+It returns true if the button is pressed and false otherwise.
+One other point: It is possible to use two or more toggle buttons in a group.
+In this  case, only one button can be in its pressed state at any one time.
+The process of creating  and using a group of toggle buttons is similar to that required to use radio buttons.
+It is  described in the following section.
+Radio buttons are a group of  mutually exclusive buttons, in which only one button can be selected at any one time.
+Thus, a radio button is a specialized form of a toggle  button.
+You have almost certainly seen radio buttons in action because they are the primary  control employed when the user must select only one option among several alternatives.
+After all  radio buttons have been added to the same group, their mutually exclusive behavior will  be enabled.
+In general, when radio buttons are used in a group, one of the buttons is selected when  the group is first displayed in the GUI.
+Here are two ways to do this.
+Otherwise, it is deselected.
+Although the button is  selected, no action event is generated.
+There are a number of different ways to use radio buttons.
+Perhaps the simplest is to  simply respond to the action event that is generated when one is selected.
+The following  program shows an example of this approach.
+It uses radio buttons to allow the user to select  a type of transportation.
+As explained, radio buttons must be part of a toggle group in order for their mutually  exclusive behavior to be activated.
+This causes that button to be selected and an action event to  be generated for it.
+This causes the button to be initialized with the default selection.
+When a change takes place, the event handler can easily determine  which radio button has been selected and take action accordingly.
+By default, it  creates a horizontal line.
+A second constructor lets you choose a vertical separator.
+Although you are no doubt familiar with check boxes because they are widely  used controls, the JavaFX check box is a bit more sophisticated than you may at first think.
+The first two are checked or unchecked, as  you would expect, and this is the default behavior.
+The third state is indeterminate (also called  undefined).
+It is typically used to indicate that the state of the check box has not been set or  that it is not relevant to a specific situation.
+If you need the indeterminate state, you will  need to explicitly enable it.
+The first is the default constructor.
+The second lets  you specify a string that identifies the box.
+Here is a program that demonstrates check boxes.
+Each time a  check box state changes, an action event is generated and handled by displaying the new  state (selected or cleared) and by displaying a list of all selected boxes.
+Each time a check box is changed,  an action command is generated.
+If you want to add the indeterminate state, it must be explicitly enabled.
+Otherwise, it is disabled.
+When the indeterminate state is enabled, the user can select between checked, unchecked,  and indeterminate.
+You can see the effect of a three-state check box by modifying the preceding program.
+Update the other two handlers in the same way.
+List views are controls that display a list of entries from which you can select one or more.
+Because of their ability to make efficient use of limited screen space, list views are popular  alternatives to other types of selection controls.
+Often, these are entries of type  String, but other types are also allowed.
+The second lets you specify the list of entries in the list.
+Thus,  it supports the standard collection methods.
+However, you can allow multiple selections by changing the selection mode.
+For now, we  will use the default, single-selection model.
+First, you can ignore events  generated by the list and simply obtain the selection in the list when your program needs it.
+Second, you can monitor the list for changes by registering a change listener.
+This lets you  respond each time the user changes a selection in the list.
+This is the approach used here.
+The following example puts the preceding discussion into action.
+It creates a list view  that displays various types of transportation, allowing the user to select one.
+When one is  chosen, the selection is displayed.
+When multiple-selection mode is enabled, you can obtain the list of the selections two  ways: as a list of selected indices or as a list of selected items.
+We will use a list of selected  items, but the procedure is similar when using a list of the indices of the selected items.
+To experiment with multiple selections, you can modify the preceding program as  follows.
+A combo box displays one selection, but it will also display a drop-down  list that allows the user to select a different item.
+You can also allow the user to edit a selection.
+Often, these are entries of type String, but other types  are also allowed.
+The second lets you specify the list of entries.
+It will also generate  a change event.
+Alternatively, it is also possible to ignore events and simply obtain the current  selection when needed.
+The following program demonstrates a combo box by reworking the previous list view  example.
+Assuming that it contains only entries of type String, it is easy to enable editing capabilities.
+If enable is true, editing is enabled.
+You might find it interesting to explore further.
+However, sometimes you will want the user to enter a string of his or her own choosing.
+To accommodate this type of input, JavaFX includes several text-based controls.
+It allows one line of text to be entered.
+The first is the default constructor, which creates an  empty text field that has the default size.
+The second lets you specify the initial contents of  the field.
+Here, we will use the default constructor.
+Although the default size is sometimes adequate, often you will want to specify its size.
+You can also select a portion of the text under program control.
+It is  displayed using low-intensity (such as a gray tone).
+Although handling this event is often helpful, in some cases, your program will simply  obtain the text when it is needed, rather than handling action events.
+Both approaches are  demonstrated by the following program.
+It creates a text field that requests a search string.
+Notice that a prompting message is also  included.
+A large image may not fit within reasonable boundaries,  or you might want to display text that is longer than will fit within a small window.
+Whatever  the reason, JavaFX makes it easy to provide scrolling capabilities to any node in a scene  graph.
+No further action is required on your part.
+The first is the default constructor.
+The second lets  you specify a node that you want to scroll.
+When displayed, the  content can be scrolled.
+Thus,  what is being scrolled can be changed during the execution of your program.
+Although a default size is provided, as a general rule, you will want to set the  dimensions of the viewport.
+The viewport is the viewable area of a scroll pane.
+It is the area  in which the content being scrolled is displayed.
+Thus, the viewport displays the visible  portion of the content.
+The scrollbars scroll the content through the viewport.
+Thus, by  moving a scrollbar, you change what part of the content is visible.
+For example, if the component is taller than the viewport, a vertical scrollbar is  added.
+If the component will completely fit within the viewport, the scrollbars are removed.
+By default, this feature is off.
+Otherwise, it is disabled.
+Be default, scrollbar positions start at zero.
+For example, it is possible to set the minimum  and maximum scrollbar positions.
+You can also specify when and if the scrollbars are shown  by setting a scrollbar policy.
+Notice that it also enables panning.
+It presents a hierarchical view of data  in a tree-like format.
+In this context, the term hierarchical means some items are subordinate  to others.
+For example, a tree is commonly used to display the contents of a file system.
+In this  case, the individual files are subordinate to the directory that contains them.
+This allows hierarchical data  to be presented in a compact, yet expandable form.
+Therefore, even though trees support a sophisticated structure, they are still quite  easy to work with.
+A tree begins  with a single root node that indicates the start of the tree.
+There are two types of child nodes: leaf nodes (also called terminal nodes), which  have no children, and branch nodes, which form the root nodes of subtrees.
+A subtree is  simply a tree that is part of a larger tree.
+The sequence of nodes that leads from the root  to a specific node is called a path.
+Although a fully collapsed tree might be  quite small, its expanded form may be quite large.
+Often, this will be of type  String.
+To do  this, you must first create the root.
+Next, add other nodes to that root.
+These other nodes can be  leaf nodes or subtrees.
+You can also follow the  tree path of an item in either the forward or backward direction.
+The tree presents a  hierarchy of food.
+The type of items stored in the tree are strings.
+The root is labeled Food.
+Each time a selection is made, the name of the item is displayed.
+Also, the path from the root to the item is shown.
+First, notice how the  tree is constructed.
+These nodes consist of the root nodes of  subtrees: one for fruit, one for vegetables, and one for nuts.
+Next, the leaves are added to  these subtrees.
+However, one of these, the fruit subtree, consists of another subtree that  contains varieties of apples.
+The point here is that each branch in a tree leads either to a  leaf or to the root of a subtree.
+After all of the nodes have been constructed, the root nodes  of each subtree are added to the root node of the tree.
+The process is the same for adding any child node to its parent node.
+The second thing to notice in the program is the way the path from the root to the  selected node is constructed within the change event handler.
+In this  example, the value will be a string, which is the node�s name.
+If the newly selected node does not have a  parent, then tmp will be null.
+Otherwise, the loop is entered, within which each parent�s  value (which is its name in this case) is added to path.
+This process continues until the root  node of the tree (which has no parent) is found.
+A principal advantage of JavaFX is its ability to alter the precise look of a control (or any  node in the scene graph) through the application of an effect and/or a transform.
+Both  effects and transforms help give your GUI the sophisticated, modern look that users have  come to expect.
+Using these effects, you can customize the way a node in a  scene graph looks.
+Several built-in effects are provided.
+Of course, depending on the control, some effects will be more  appropriate than others.
+To specify no effect, pass null.
+Once  this has been done, the effect will be used whenever the node is rendered (as long as the  effect is supported by the environment).
+However, the process of adding an effect is essentially  the same no matter what effect you choose.
+The amount of glow is  under your control.
+It  supports various constructors.
+In essence, the radius  describes the size of the shadow.
+Each does  what its name suggests.
+It is possible to perform more than one transform on a  node.
+For example, you could rotate it and scale it.
+One way to add a transform to a node is to add it to the list of transforms maintained by  the node.
+However,  using the transforms list offers the greatest flexibility, and that is the approach  demonstrated here.
+The  other transforms are used in the same general way.
+Rotate rotates a node around a specified  point.
+It defines several constructors.
+Scale scales a node as specified by a scale factor.
+Scale defines several constructors.
+Each time one of these  buttons is pressed, the corresponding effect or transform is applied to the button.
+When you examine the program, you will see how easy it is to customize the look of  your GUI.
+You might find it interesting to experiment with it, trying different transforms or  effects, or trying the effects on different types of nodes other than buttons.
+It creates a node that consists of text.
+Because it is a node, the text can be  easily manipulated as a unit and various effects and transforms can be applied.
+A tooltip is a short message that  is displayed when the mouse hovers over a control.
+In JavaFX, a tooltip can be easily added  to any control.
+Frankly, because of the benefits that tooltips offer and the ease by which  they can be incorporated into your GUI, there is virtually no reason not to use them where  appropriate.
+Once a tooltip has been  set, it is automatically displayed when the mouse hovers over the control.
+No other action is  required on your part.
+Any node in  the scene graph, including a control, can be disabled under program control.
+Furthermore, the proper implementation of an application�s menus is a  necessary part of creating a successful GUI.
+Because of the key role they play in many  applications, JavaFX provides extensive support for menus.
+Fortunately, JavaFX�s approach  to menus is both powerful and streamlined.
+As a result, if you already know  how to create Swing menus, learning how to create menus in JavaFX is easy.
+That said, there  are also several differences, so it is important not to jump to conclusions about the JavaFX  menu system.
+The JavaFX menu system supports several key elements, including.
+The menu bar, which is the main menu for an application.
+The standard menu, which can contain either items to be selected or other menus  (submenus).
+The context menu, which is often activated by right-clicking the mouse.
+Context  menus are also called popup menus.
+JavaFX menus also support accelerator keys, which enable menu items to be selected without  having to activate the menu, and mnemonics, which allow a menu item to be selected by the  keyboard once the menu options are displayed.
+Here is brief overview of how the classes fit together.
+This class is, loosely speaking, a  container for menus.
+In addition to �standard� menu items, you can also include check and radio menu items  in a menu.
+Their operation parallels check box and radio button controls.
+They cannot be otherwise incorporated  into a scene graph.
+This allows the creation of  submenus, which are, essentially, menus within menus.
+You  will see this process in action in the examples that follow.
+When a menu item is selected, an action event is generated.
+The text associated with  the selection will be the name of the selection.
+Thus, when using one action event handler  to process all menu selections, one way you can determine which item was selected is by  examining the name.
+Of course, you can also use separate anonymous inner classes or  lambda expressions to handle each menu item�s action events.
+In this case, the menu  selection is already known and there is no need to examine the name to determine which  item was selected.
+As an alternative or adjunct to menus that descend from the menu bar, you can also  create stand-alone, context menus, which pop up when activated.
+A context  menu is often activated by clicking the right mouse button when the mouse is over a control.
+A feature related to the menu is the toolbar.
+It creates a stand-alone component that is often used to provide fast access to  functionality contained within the menus of the application.
+For example, a toolbar might  provide fast access to the formatting commands supported by a word processor.
+These form the minimum set of classes needed to construct a main menu for an  application.
+It is the control that supplies the main menu  of an application.
+Thus, it can be added to a scene  graph.
+Therefore, initially,  the menu bar will be empty, and you will need to populate it with menus prior to use.
+As a  general rule, an application has one and only one menu bar.
+It returns  a list of the menus managed by the menu bar.
+It is to this list that you will add the menus  that you create.
+The added menus are positioned in the  bar from left to right, in the order in which they are added.
+Indexing begins at 0, with 0 being the  left-most menu.
+In some cases, you might want to remove a menu that is no longer needed.
+Indexing begins at zero.
+This enables one menu to be submenu of another.
+Menu defines three constructors.
+In all cases, the menu is empty until menu  items are added to it.
+Finally, you don�t have to give a menu a name when it is constructed.
+Each menu maintains a list of menu items that it contains.
+To add an item to the menu,  add items to this list.
+Separators help organize long menus by allowing you to  group related items together.
+If disable is false, the  item is enabled.
+This is the menu defined  by the menu bar, and it is the menu that defines all (or nearly all) of the functionality of an  application.
+As you will see, JavaFX streamlines the process of creating and managing the  main menu.
+Here, you will see how to construct a simple main menu.
+Subsequent sections  will show various options.
+If you already  know Swing, you might find it helpful to compare the two different approaches.
+Constructing the main menu requires several steps.
+Next, construct each menu that will be in the menu bar.
+After the menus have been created, add them to the menu bar.
+Then, the menu bar, itself,  must be added to the scene graph.
+Finally, for each menu item, you must add an action  event handler that responds to the action event fired when a menu item is selected.
+A good way to understand the process of creating and managing menus is to work  through an example.
+Here is a program that creates a simple menu bar that contains three  menus.
+When a menu item is selected,  the name of the selection is displayed in a label.
+To add  menu items to a menu, you will add them to this list.
+Notice that a separator is used to  separate visually the Exit entry from the others.
+For demonstration purposes, a  single handler will process all selections, but in a real-world application, it is often easier to  specify a separate handler for each individual selection by using anonymous inner classes or  lambda expressions.
+They simply activate submenus.
+This way, it will work for both Windows and Mac and elsewhere.
+A mnemonic can be specified for both MenuItem and Menu objects, and it is very easy  to do.
+Simply precede the letter in the name of the menu or menu item with an underscore.
+However,  mnemonics are active only if mnemonic parsing is true (as it is by default).
+Otherwise, it is turned off.
+This lets you change the image during program execution.
+These elements can streamline a GUI by allowing a menu to provide functionality that would  otherwise require additional, stand-alone components.
+Also, sometimes including check or  radio menu items simply seems most natural for a specific set of features.
+Whatever your  reason, it is easy to use check and/or radio menu items in menus, and both are examined here.
+The initial state of the item is unchecked.
+Otherwise, it is unchecked.
+Like stand-alone check boxes, check menu items generate action events when their  state is changed.
+Check menu items are especially appropriate in menus when you have  options that can be selected and you want to display their selected/deselected status.
+The item is not selected.
+Like stand-alone radio buttons, menu radio items must be put into a toggle  group in order for them to exhibit mutually exclusive selection behavior.
+Aside from having the extra capabilities of check  boxes and radio buttons, they act like and are used like other menu items.
+Typically, a context menu is activated by clicking the right  mouse button when over a control.
+In general, context menus are constructed like regular menus.
+Menu items are created  and added to the menu.
+Menu item selections are also handled in the same way: by handling  action events.
+The main difference between a context menu and a regular menu is the  activation process.
+To associate a context menu with a control is amazingly easy.
+When you right-click on that control, the associated context menu  will be shown.
+It then  creates an instance of ContextMenu called editMenu that contains the items.
+Here, node is the element on which the context menu is linked.
+Typically, you will pass the screen coordinates at which the right-click occurred.
+The preceding theory can be put into practice by adding the context menu to the root  node of the scene graph.
+After doing so, right-clicking anywhere in the scene will cause the  menu to pop up.
+Typically, a toolbar contains a list of buttons that give the user immediate access to various  program options.
+For example, a toolbar might contain buttons that select various font  options, such as bold, italics, highlight, or underline.
+These options can be selected without  the need to drop through a menu.
+As a general rule, toolbar buttons show images rather  than text, although either or both are allowed.
+Furthermore, often tooltips are associated  with image-based toolbar buttons.
+In JavaFX, toolbars are instances of the ToolBar class.
+The first constructor creates an empty, horizontal toolbar.
+The second creates a horizontal  toolbar that contains the specified nodes, which are usually some form of button.
+Once you have created a toolbar, add it to the scene graph.
+For example, when using a border layout, it could be added to the bottom location.
+Of  course, other approaches are commonly used.
+For example, it could be added to a location  directly under the menu bar or at the side of the window.
+We will also add tooltips to the menu items.
+Recall from the previous chapter, a tooltip is a  small message that describes an item.
+It is automatically displayed if the mouse hovers over  the item for moment.
+Tooltips are especially useful when applied to image-based  toolbar controls because sometimes it�s hard to design images that are intuitive to all users.
+First, create toolbar items.
+First, three buttons are created that correspond to the  debug actions.
+Notice that each has an image associated with it.
+Before concluding, it will be  helpful to assemble all the pieces.
+Doing so not only eliminates any ambiguity about the way  the pieces fit together, but it also gives you a complete menu demonstration program that  you can experiment with.
+For clarity, the program has been reorganized, with separate  methods being used to construct the various menus and toolbar.
+It also redefines aspects of the  Java platform.
+The preceding three chapters have introduced several of its core features, but  there is much left to explore.
+For example, JavaFX supplies several more controls, such as  sliders, stand-alone scrollbars, and tables.
+These components may be provided  by you or supplied by one or more different vendors.
+Hardware designers  have a wide variety of components that can be integrated together to construct a system.
+Resistors, capacitors, and inductors are examples of simple building blocks.
+Integrated  circuits provide more advanced functionality.
+All of these different parts can be reused.
+It   is not necessary or possible to rebuild these capabilities each time a new system is needed.
+Also, the same pieces can be used in different types of circuits.
+This is possible because the  behavior of these components is understood and documented.
+The software industry has also been seeking the benefits of reusability and interoperability  of a component-based approach.
+To realize these benefits, a component architecture is  needed that allows programs to be assembled from software building blocks, perhaps  provided by different vendors.
+It must also be possible for a designer to select a component,  understand its capabilities, and incorporate it into an application.
+When a new version of a  component becomes available, it should be easy to incorporate this functionality into existing  code.
+It may perform  a simple function, such as obtaining an inventory value, or a complex function, such as  forecasting the performance of a stock portfolio.
+One  example of this is a button on a graphical user interface.
+Software to decode a stream of multimedia information in real time is an example of  this type of building block.
+This software is only  needed when the design-time parameters for that component are being set.
+It does  not need to be included in the run-time environment.
+With the first method, simple naming conventions  are used.
+Both approaches are examined here.
+The values assigned to the properties determine the behavior and appearance of that component.
+A property is set through a setter method.
+A  property is obtained by a getter method.
+There are two types of properties: simple and indexed.
+Protected and private methods   are not presented.
+By  implementing these methods, a developer can designate exactly what is presented to a user,  bypassing introspection based on design patterns.
+If you don�t override a method, then design-pattern  introspection will be used.
+It too is sent to objects  that previously registered an interest in receiving such notifications.
+Automatic serialization can  also be inherited.
+When using automatic serialization, you can selectively prevent a field from being saved  through the use of the transient keyword.
+Otherwise, containers cannot save the  configuration of your component.
+A customizer can provide a step-by-step guide through the process that must be followed to  use the component in a specific context.
+Can be used to write this  information to a stream.
+Each is briefly examined here.
+It supports  several methods that manage and describe properties.
+It supports several methods that obtain  the methods that a Bean uses to add or remove event listeners, and to otherwise manage  events.
+The example uses three classes.
+It selects a random color and then repaints the component.
+In this case, the only property exposed is rectangular.
+This time it will report more properties.
+Servlets are small programs that execute  on the server side of a web connection.
+Just as applets dynamically extend the functionality   of a web browser, servlets dynamically extend the functionality of a web server.
+The topic of  servlets is quite large, and it is beyond the scope of this chapter to cover it all.
+Instead, we  will focus on the core concepts, interfaces, and classes, and develop several examples.
+In order to understand the advantages of servlets, you must have a basic understanding of  how web browsers and servers cooperate to provide content to a user.
+Consider a request  for a static web page.
+A user enters a Uniform Resource Locator (URL) into a browser.
+The  browser generates an HTTP request to the appropriate web server.
+The web server maps  this request to a specific file.
+That file is returned in an HTTP response to the browser.
+The  HTTP header in the response indicates the type of the content.
+The Multipurpose Internet  Mail Extensions (MIME) are used for this purpose.
+For example, ordinary ASCII text has a  MIME type of text/plain.
+The Hypertext Markup Language (HTML) source code of a web  page has a MIME type of text/html.
+Now consider dynamic content.
+Assume that an online store uses a database to store  information about its business.
+This would include items for sale, prices, availability, orders,  and so forth.
+It wishes to make this information accessible to customers via web pages.
+The  contents of those web pages must be dynamically generated to reflect the latest information  in the database.
+In the early days of the Web, a server could dynamically construct a page by creating a  separate process to handle each client request.
+The process would open connections to one  or more databases in order to obtain the necessary information.
+It communicated with the  web server via an interface known as the Common Gateway Interface (CGI).
+CGI allowed  the separate process to read data from the HTTP request and write data to the HTTP  response.
+A variety of different languages were used to build CGI programs.
+It was expensive in terms of  processor and memory resources to create a separate process for each client request.
+It was  also expensive to open and close database connections for each client request.
+In addition,  the CGI programs were not platform-independent.
+Therefore, other techniques were  introduced.
+Among these are servlets.
+Servlets offer several advantages in comparison with CGI.
+First, performance is  significantly better.
+Servlets execute within the address space of a web server.
+It is not  necessary to create a separate process to handle each client request.
+Second, servlets are  platform-independent because they are written in Java.
+Third, the Java security manager on  the server enforces a set of restrictions to protect the resources on a server machine.
+Finally,  the full functionality of the Java class libraries is available to a servlet.
+It can communicate  with applets, databases, or other software via the sockets and RMI mechanisms that you  have seen already.
+They are implemented by every servlet and are invoked at specific times by the  server
+Let us consider a typical user scenario to understand when these methods are called.
+The browser then generates an HTTP request for this URL.
+This request is then sent to the  appropriate server.
+Second, this HTTP request is received by the web server.
+The server maps this request  to a particular servlet.
+The servlet is dynamically retrieved and loaded into the address  space of the server.
+This method is invoked only  when the servlet is first loaded into memory.
+It is possible to pass initialization parameters  to the servlet so it may configure itself.
+This method is called to  process the HTTP request.
+You will see that it is possible for the servlet to read data that has  been provided in the HTTP request.
+It may also formulate an HTTP response for the client.
+The servlet remains in the server�s address space and is available to process any other  HTTP requests received from clients.
+Finally, the server may decide to unload the servlet from its memory.
+The algorithms by  which this determination is made are specific to each server.
+Important data may be saved to a persistent store.
+The memory allocated for the servlet and  its objects can then be garbage collected.
+The way you develop and deploy  servlets differs among IDEs, and it is simply not possible for this book to address each  environment.
+Furthermore, many readers will be using the command-line tools rather   than an IDE.
+Therefore, if you are using an IDE, you must refer to the instructions for that  environment for information concerning the development and deployment of servlets.
+For  this reason, the instructions given here and elsewhere in this chapter assume that only the  command-line tools are employed.
+Thus, they will work for nearly any reader.
+It is also widely available in various programming environments.
+Furthermore, since only  command-line tools are used, you don�t need to download and install an IDE just to  experiment with servlets.
+It is just that  the mechanics of preparing a servlet for testing will be slightly different.
+If you are using an IDE and different servlet container/server, consult the documentation for your environment.
+This package contains the classes and interfaces required to build servlets.
+You will learn more about these later in this chapter.
+This method handles requests from a client.
+This enables the servlet to read data that is provided via the client  request.
+This enables the servlet to  formulate a response for the client.
+This indicates that the browser should interpret the  content as HTML source code.
+Anything written to this stream is sent to the client as part of the HTTP response.
+You will observe the output of the servlet in the browser display area.
+Two packages contain the classes and interfaces that are required to build the servlets  described in this chapter.
+They constitute  the core of the Servlet API.
+Keep in mind that these packages are not part of the Java core packages.
+Therefore, they are not included with Java SE.
+They are also provided by Java EE.
+The Servlet API has been in a process of ongoing development and enhancement.
+However, because changes happen fast in the  world of Java, you will want to check for any additions or alterations.
+This chapter discusses  the core of the Servlet API, which will be available to most readers and works with all  modern versions of the servlet specification.
+The following table summarizes several key interfaces  that are provided in this package.
+The most significant of these is Servlet.
+All servlets must  implement this interface or extend a class that implements the interface.
+Let us examine these interfaces and classes in more detail.
+A method  is also provided that allows a servlet to obtain any initialization parameters.
+These are invoked by the server.
+The value �1 is  returned if the size is unavailable.
+A null value is  returned if the type cannot be determined.
+In addition, a  method to append a string to the server log file is available.
+It is implemented by the servlet  container and provides an input stream that a servlet developer can use to read the data  from a client request.
+In addition to the input methods inherited from InputStream, a  method is provided to read bytes from the stream.
+The method returns  the actual number of bytes read or �1 if an end-of-stream condition is encountered.
+It is implemented by the servlet  container and provides an output stream that a servlet developer can use to write data to  a client response.
+It indicates that a servlet is unavailable.
+The ServletRequest interface includes methods that allow you to read the names and values of parameters that are included in a client request.
+We will develop a servlet that illustrates  their use.
+It  defines a table that contains two labels and two text fields.
+One of the labels is Employee  and the other is Phone.
+There is also a submit button.
+Notice that the action parameter of  the form tag specifies a URL.
+The URL identifies the servlet to process the HTTP POST  request.
+These are processed in a loop.
+You can see that the parameter name and value are output to the client.
+Display the web page in a browser.
+Enter an employee name and phone number in the text fields.
+Submit the web page.
+After following these steps, the browser will display a response that is dynamically generated  by the servlet.
+As you will see, its functionality makes it easy to build servlets  that work with HTTP requests and responses.
+Enables servlets to write data to an HTTP response.
+Allows session data to be read and written.
+The following table summarizes the classes used in this chapter.
+The most important of  these is HttpServlet.
+Servlet developers typically extend this class in order to process HTTP  requests.
+Several constants are defined.
+These correspond to the different status codes that  can be assigned to an HTTP response.
+The HttpSession interface enables a servlet to read and write the state information that is  associated with an HTTP session.
+Returns the HTTP method for this request.
+Returns any path information that is located after the  servlet path and before a query string of the URL.
+Returns any path information that is located after  the servlet path and before a query string of the URL  after translating it to a real path.
+Returns any query string in the URL.
+Returns the name of the user who issued this request.
+Returns the ID of the session.
+Returns the URI.
+Returns the URL.
+Returns that part of the URL that identifies the servlet.
+Returns the session for this request.
+If a session does  not exist, one is created and then returned.
+Otherwise, returns  the existing session for this request.
+Otherwise, returns false.
+A cookie is stored on a client and contains state information.
+Cookies are valuable for tracking user activities.
+For example, assume that a  user visits an online store.
+A cookie can save the user�s name, address, and other information.
+The user does not need to enter this data each time he or she visits the store.
+The data for that cookie is then included in the header   of the HTTP response that is sent to the browser.
+The names and values of cookies are stored on the user�s machine.
+If so, returns the  modified version of url.
+Otherwise, returns  url.
+All URLs generated by a servlet should be  processed by this method.
+If so, returns the  modified version of url.
+Otherwise, returns url.
+If  an expiration date is not explicitly assigned to a cookie, it is deleted when the current browser  session ends.
+The domain and path of the cookie determine when it is included in the header of an  HTTP request.
+If the user enters a URL whose domain and path match these values, the  cookie is then supplied to the web server.
+Otherwise, it is not.
+There is one constructor for Cookie.
+It is commonly used when developing  servlets that receive and process HTTP requests.
+Otherwise, returns false.
+This is the  number of seconds after which the cookie is deleted.
+A servlet developer typically overrides one of these methods.
+A  complete description of the different types of HTTP requests is beyond the scope of this  book.
+However, the GET and POST requests are commonly used when handling form  input.
+Therefore, this section presents examples of these cases.
+Next, copy it to the appropriate directory, and update the web.
+Display the web page in a browser.
+Select a color.
+Submit the web page.
+After completing these steps, the browser will display the response that is dynamically  generated by the servlet.
+One other point: Parameters for an HTTP GET request are included as part of the URL  that is sent to the web server.
+Assume that the user selects the red option and submits the  form.
+The servlet is invoked  when a form on a web page is submitted.
+The example contains two files.
+A response is then formulated.
+Compile the servlet and perform the same steps as described in the previous section to  test it.
+The parameter names and values are sent in the body of the HTTP request.
+The servlet is invoked when a  form on a web page is submitted.
+This page  contains a text field in which a value can be entered.
+There is also a submit button on the  page.
+It gets the  value of the parameter named "data".
+A feedback message is then  written to the browser.
+The names and values of these cookies are then written to the HTTP response.
+Then, perform these steps to test this example.
+Submit the web page.
+After completing these steps, you will observe that a feedback message is displayed by the  browser.
