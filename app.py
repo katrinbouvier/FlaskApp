@@ -1,18 +1,24 @@
 from flask import Flask, render_template, url_for, request, redirect
 from flask_sqlalchemy import SQLAlchemy
-from datetime import datetime
-
-from sqlalchemy.util import NoneType
+import os
+from werkzeug.utils import secure_filename
 
 db = SQLAlchemy()
+UPLOAD_FOLDER = './/file-storage'
+ALLOWED_EXTENSIONS = set(['txt', 'doc', 'docx'])
 
 
 def create_app():
     app = Flask(__name__)
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///translator.db'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+    app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
     db.init_app(app)
     return app
+
+
+def allowed_file(filename):
+    return '.' in filename and filename.rsplit('.', 1)[1] in ALLOWED_EXTENSIONS
 
 
 app = create_app()
@@ -47,13 +53,15 @@ def index():
         return render_template("app/index.html")
 
 
-@app.route('/auth', methods=['POST', 'GET'])
+@app.route('/', methods=['POST', 'GET'])
 def auth():
+    message = ''
     if request.method == 'POST':
         user_email = request.form['user']
 
         if user_email == '':
-            return "В поле ничего нет"
+            message = 'В поле ничего нет'
+            return render_template("app/auth.html", message=message)
         else:
             cur_user = Users.query.filter_by(email=user_email).first()
             if cur_user is not None:
@@ -67,14 +75,31 @@ def auth():
                     # return render_template("app/index.html", email=user_email)
                     return redirect('/home')
                 except:
-                    return "При добавлении email произошла ошибка"
+                    message = 'При добавлении email произошла ошибка'
     else:
-        return render_template("app/auth.html")
+        return render_template("app/auth.html", message=message)
 
 
-@app.route('/document')
+@app.route('/document', methods=['POST', 'GET'])
 def document():
+    if request.method == "POST":
+        file = request.files['file']
+        if file and allowed_file(file.filename):
+            filename = secure_filename(file.filename)
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            return redirect(url_for('uploaded_file', filename=filename))
     return render_template("app/document.html")
+
+
+@app.route('/uploaded_file')
+def uploaded_file(filename):
+    path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+    lines = []
+    with open(path) as file:
+        for line in file:
+            lines.append(line)
+            print(lines)
+    return render_template("app/uploaded_file.html", lines)
 
 
 @app.route('/favorites')

@@ -1,7 +1,8 @@
 * {box-sizing: border-box; margin: 0;}
 
 body {
-  background: rgb(176, 204, 212);
+  /*background: rgb(176, 204, 212);*/
+  background: #061a25;
   font-family: 'Roboto', sans-serif;
 }
 .widget {
@@ -9,10 +10,12 @@ body {
   /*padding-top: 40px;*/
   padding: 20px;
   /*border: 5px solid #f1f1f1;*/
-  background: rgb(176, 204, 212);
+  /*background: rgb(176, 204, 212);*/
+  background: greenyellow;
   /*border-radius: 5px;*/
   font-family: 'Roboto', sans-serif;
   /*font-family: FontAwesome;*/
+
 }
 .widget h3 {
   margin-bottom: 20px;
@@ -54,19 +57,31 @@ body {
 
 
 #header {
-  background: #4595d4;
-  height:120px;
+  /*background: #4595d4;*/
+  /*background: blueviolet;*/
+  background: #0d4b6a;
+  height: 100px;
+  /*vertical-align: auto;*/
+  /*height:120px;*/
 
-  text-align: left;
-  /*display:inline-block;*/
-  float: none;
-  overflow: hidden;
+  /*text-align: left;*/
+  /*!*display:inline-block;*!*/
+  /*float: none;*/
+  /*overflow: hidden;*/
+
 }
 
 #header p {
+  background: #061a25;
+  /*background: #0d4b6a;*/
   color: white;
   font-size:24px;
-  padding-top: 40px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   margin-left:20px;
+  display: inline-block;
+  /*margin-top: 10px;*/
+  /*margin-bottom: auto;*/
+  /*padding-bottom: 10%;*/
 
 }

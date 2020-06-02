@@ -5,14 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="db50d0f6-6aaf-4c3f-b142-2cd793229ed2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/other.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/app/document.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/app/document.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/app/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/app/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,9 +67,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
-        <option value="HTML File" />
         <option value="Jupyter Notebook" />
+        <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -84,10 +85,12 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="run.code.analysis.last.selected.profile" value="aDefault" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
@@ -99,8 +102,34 @@
       <recent name="C:\Users\Екатерина\PycharmProjects\app\templates\app" />
       <recent name="C:\Users\Екатерина\PycharmProjects\app\templates" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Екатерина\PycharmProjects\app\neuralnet" />
+      <recent name="C:\Users\Екатерина\PycharmProjects\app\neural-net" />
+    </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.app">
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="app" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="app" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -123,9 +152,101 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="netinterface" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="app" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/neuralnet" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/neuralnet/netinterface.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="nettrain (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="app" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/neuralnet" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/neuralnet/nettrain.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="nettrain" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="app" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/neuralnet" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\Екатерина\PycharmProjects\app\neuralnet\nettrain.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="newnettrain" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="app" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/neuralnet" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/neuralnet/newnettrain.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python.app" />
+        <item itemvalue="Python.newnettrain" />
+        <item itemvalue="Python.nettrain (1)" />
+        <item itemvalue="Python.netinterface" />
+        <item itemvalue="Python.nettrain" />
       </list>
     </recent_temporary>
   </component>
@@ -144,6 +265,12 @@
       <workItem from="1590110789086" duration="4383000" />
       <workItem from="1590146216385" duration="21713000" />
       <workItem from="1590307346206" duration="23017000" />
+      <workItem from="1590404186507" duration="2624000" />
+      <workItem from="1590422993990" duration="20460000" />
+      <workItem from="1590677127577" duration="1960000" />
+      <workItem from="1590745454192" duration="10193000" />
+      <workItem from="1590928911915" duration="11156000" />
+      <workItem from="1590992354498" duration="6948000" />
     </task>
     <servers />
   </component>
@@ -163,26 +290,26 @@
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="171" y="332" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1032@0.0.1920.1032" timestamp="1590340719338" />
-    <state x="1147" y="190" key="FileChooserDialogImpl" timestamp="1590074097950">
+    <state x="1147" y="190" key="FileChooserDialogImpl" timestamp="1590940802313">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="1147" y="190" key="FileChooserDialogImpl/0.0.1920.1032@0.0.1920.1032" timestamp="1590074097950" />
-    <state width="1864" height="118" key="GridCell.Tab.0.bottom" timestamp="1590342657250">
+    <state x="1147" y="190" key="FileChooserDialogImpl/0.0.1920.1032@0.0.1920.1032" timestamp="1590940802313" />
+    <state width="1864" height="441" key="GridCell.Tab.0.bottom" timestamp="1591017669920">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="1864" height="118" key="GridCell.Tab.0.bottom/0.0.1920.1032@0.0.1920.1032" timestamp="1590342657250" />
-    <state width="1864" height="118" key="GridCell.Tab.0.center" timestamp="1590342657250">
+    <state width="1864" height="441" key="GridCell.Tab.0.bottom/0.0.1920.1032@0.0.1920.1032" timestamp="1591017669920" />
+    <state width="1864" height="441" key="GridCell.Tab.0.center" timestamp="1591017669919">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="1864" height="118" key="GridCell.Tab.0.center/0.0.1920.1032@0.0.1920.1032" timestamp="1590342657250" />
-    <state width="1864" height="118" key="GridCell.Tab.0.left" timestamp="1590342657250">
+    <state width="1864" height="441" key="GridCell.Tab.0.center/0.0.1920.1032@0.0.1920.1032" timestamp="1591017669919" />
+    <state width="1864" height="441" key="GridCell.Tab.0.left" timestamp="1591017669919">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="1864" height="118" key="GridCell.Tab.0.left/0.0.1920.1032@0.0.1920.1032" timestamp="1590342657250" />
-    <state width="1864" height="118" key="GridCell.Tab.0.right" timestamp="1590342657250">
+    <state width="1864" height="441" key="GridCell.Tab.0.left/0.0.1920.1032@0.0.1920.1032" timestamp="1591017669919" />
+    <state width="1864" height="441" key="GridCell.Tab.0.right" timestamp="1591017669920">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="1864" height="118" key="GridCell.Tab.0.right/0.0.1920.1032@0.0.1920.1032" timestamp="1590342657250" />
+    <state width="1864" height="441" key="GridCell.Tab.0.right/0.0.1920.1032@0.0.1920.1032" timestamp="1591017669920" />
     <state width="886" height="314" key="GridCell.Tab.1.bottom" timestamp="1590259371624">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
@@ -203,20 +330,20 @@
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state width="263" height="571" key="HiddenNamespacesPopup/0.0.1920.1032@0.0.1920.1032" timestamp="1590307437703" />
-    <state x="460" y="0" key="SettingsEditor" timestamp="1590253256682">
+    <state x="460" y="0" key="SettingsEditor" timestamp="1591010989793">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="460" y="0" key="SettingsEditor/0.0.1920.1032@0.0.1920.1032" timestamp="1590253256682" />
+    <state x="460" y="0" key="SettingsEditor/0.0.1920.1032@0.0.1920.1032" timestamp="1591010989793" />
     <state x="606" y="67" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1590339346457">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="606" y="67" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1590339346457" />
-    <state x="579" y="295" key="com.intellij.ide.util.TipDialog" timestamp="1590307347075">
+    <state x="579" y="295" key="com.intellij.ide.util.TipDialog" timestamp="1590992356292">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="579" y="295" key="com.intellij.ide.util.TipDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1590307347075" />
+    <state x="579" y="295" key="com.intellij.ide.util.TipDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1590992356292" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/app$app.coverage" NAME="app Coverage Results" MODIFIED="1590341700896" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/app$app.coverage" NAME="app Coverage Results" MODIFIED="1591011215075" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
