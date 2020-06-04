@@ -2,18 +2,25 @@
 
 body {
   /*background: rgb(176, 204, 212);*/
-  background: #061a25;
+    background: #0d4b6a;
+  /*background: #061a25;*/
   font-family: 'Roboto', sans-serif;
+  /*font-family: 'Century Gothic';*/
 }
 .widget {
   float: left;
+  /*display: block;*/
   /*padding-top: 40px;*/
   padding: 20px;
+  width:15%;
   /*border: 5px solid #f1f1f1;*/
   /*background: rgb(176, 204, 212);*/
-  background: greenyellow;
-  /*border-radius: 5px;*/
-  font-family: 'Roboto', sans-serif;
+  /*background: #061a25;*/
+  background: #0d4b6a;
+
+  border-radius: 0.5em;
+  /*font-family: 'Roboto', sans-serif;*/
+  font-family: 'Century Gothic';
   /*font-family: FontAwesome;*/
 
 }
@@ -22,7 +29,7 @@ body {
   text-align: left;
   font-size: 24px;
   font-weight: normal;
-  color: #000000;
+  color: #ffffff;
 }
 .widget ul {
   margin: 0;
@@ -30,11 +37,13 @@ body {
   list-style: none;
   width: 250px;
 }
+
 .widget li {
-  border-bottom: 1px solid #eaeaea;
+  border-bottom: 1px solid #ffffff;
   padding-bottom: 15px;
   margin-bottom: 15px;
 }
+
 .widget li:last-child {
   border-bottom: none;
   margin-bottom: 0;
@@ -42,8 +51,12 @@ body {
 }
 .widget a {
   text-decoration: none;
-  color:  #616a6b;
+  color: #eafeff;
   display: inline-block;
+}
+
+.widget a:hover {
+  color: #000000;
 }
 .widget li:before {
   font-size: 20px;
@@ -57,29 +70,21 @@ body {
 
 
 #header {
-  /*background: #4595d4;*/
-  /*background: blueviolet;*/
   background: #0d4b6a;
   height: 100px;
-  /*vertical-align: auto;*/
-  /*height:120px;*/
-
-  /*text-align: left;*/
-  /*!*display:inline-block;*!*/
-  /*float: none;*/
-  /*overflow: hidden;*/
-
 }
 
 #header p {
   background: #061a25;
   /*background: #0d4b6a;*/
-  color: white;
+  color: #92bad4;
   font-size:24px;
   padding-top: 20px;
   padding-bottom: 20px;
-  margin-left:20px;
+  padding-left: 20px;
   display: inline-block;
+  width: 100%;
+  font-family: 'Century Gothic';
   /*margin-top: 10px;*/
   /*margin-bottom: auto;*/
   /*padding-bottom: 10%;*/

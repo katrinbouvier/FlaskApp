@@ -4,11 +4,19 @@
 {% endblock %}
 
 {% block body %}
-<form action="" method="post" enctype="multipart/form-data">
-    <div id="file_upload">
-         <p><input type="file" name="file">
-            <input type="submit" value="Загрузить файл">
-        </div>
-</form>
+<script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+<!--<script type="text/javascript">-->
+<!--    $(document).ready(function(){-->
+<!-- alert(jQuery.fn.jquery);-->
+<!-- });-->
+<!--</script>-->
+
+<script src="{{url_for('static', filename='js/drag_drop_files.js') }}"></script>
+
+    <div class="file_upload">
+         <div class="droparea">
+             <p>Drop here</p></div>
+         <div class="tablearea" id="tablearea"></div>
+    </div>
 
 {% endblock %}

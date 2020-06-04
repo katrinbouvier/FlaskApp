@@ -1,62 +1,84 @@
 textarea{
-  /*display:inline-block;*/
-  width: 90%;
+  width: 95%;
   height: 200px;
   resize: none;
-  border-width: 1px;
-  border-radius: 5px;
-  vertical-align: top;
-
-  /*margin-top: 40px;*/
+  border-radius: 0.5em;
+  font-size: 18px;
+  font-family: 'Roboto', sans-serif;
+  margin: 1em;
+  border-style: solid;
+  border-color: #4595d4;
+  padding: 1em;
 }
 
 table td {
   text-align: center;
-  background: green;
+}
+
+#t-header td {
+  width:50%;
+  text-align: left;
+  padding-left: 3em;
+  padding-top: 2em;
+  margin:5em;
+  border-radius: 0.5em;
 }
 
 #outer-table {
-  margin-top: 20px;
-  margin-left:40px;
-  background: #0d4b6a;
+  margin-left: auto;
+  margin-right: auto;
+  width:95%;
+}
+
+#outer-table th{
+  text-align: left;
+}
+
+#inner-table {
+  width:100%;
+  border-radius: 0.5em;
+}
+
+#inner-table td{
+  width: 50%;
 }
 
 .input-block {
-  display:block;
+  display:inline-block;
+  width: 80%;
+  height: 100%;
   position: relative;
-  float:left;
-  background: red;
-
-  /*margin:0 1.5%;*/
-
+  float:right;
+  background: #b0ccd4;
+  border-radius: 0.5em;
+  margin-right: 1em;
 }
 
 button {
-  color: #fff; /* цвет текста */
-  text-decoration: none; /* убирать подчёркивание у ссылок */
-  user-select: none; /* убирать выделение текста */
-  background: rgb(20, 132, 212); /* фон кнопки */
-  font-family: 'Roboto', sans-serif;
-  padding: .7em 1.5em; /* отступ от текста */
-  /*outline: none; !* убирать контур в Mozilla *!*/
-  margin-top:10px;
-  outline-width: 0;
-  width:350px;
-  height:50px;
+  background: #061a25;
+  height: 50px;
+  position: relative;
+  width:400px;
+  border-radius: 0.5em;
+  color:white;
+  border-style: none;
+  font-size: 16px;
+  margin-bottom: 1em;
+  margin-top: 1em;
 }
 
 button:hover {
-  background: rgb(63, 161, 212);
+  background: rgb(13, 75, 106);
 }
 
 button:active {
   background: rgb(54, 90, 212);
 }
 
-#header_ru {
-  width:420px;
-  background: deeppink;
-}
+/*#header_ru {*/
+/*  width:420px;*/
+/*  background: deeppink;*/
+/*}*/
 
 #image {
   height:20px;

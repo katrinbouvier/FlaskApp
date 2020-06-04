@@ -42,7 +42,6 @@ class Favorites(db.Model):
         return '<Favorites %r>' % self.id
 
 
-# @app.route('/')
 @app.route('/home', methods=['POST', 'GET'])
 def index():
     if request.method == "POST":
@@ -83,11 +82,15 @@ def auth():
 @app.route('/document', methods=['POST', 'GET'])
 def document():
     if request.method == "POST":
-        file = request.files['file']
-        if file and allowed_file(file.filename):
-            filename = secure_filename(file.filename)
-            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            return redirect(url_for('uploaded_file', filename=filename))
+        file = request.files['file2upload']
+        filename = secure_filename(file.filename)
+        # save_path = "{}/{}".format(app.config['UPLOAD_FOLDER'], filename)
+        file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        return "successful_upload"
+        # if file and allowed_file(file.filename):
+        #     filename = secure_filename(file.filename)
+        #     file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        #     return redirect(url_for('uploaded_file', filename=filename))
     return render_template("app/document.html")
 
 
