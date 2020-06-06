@@ -82,16 +82,18 @@ def auth():
 @app.route('/document', methods=['POST', 'GET'])
 def document():
     if request.method == "POST":
+        message = 'POST HERE'
         file = request.files['file2upload']
         filename = secure_filename(file.filename)
-        # save_path = "{}/{}".format(app.config['UPLOAD_FOLDER'], filename)
         file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-        return "successful_upload"
+        return render_template("app/document.html", message=message)
         # if file and allowed_file(file.filename):
         #     filename = secure_filename(file.filename)
         #     file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
         #     return redirect(url_for('uploaded_file', filename=filename))
-    return render_template("app/document.html")
+    else:
+        message = "ELSE HERE"
+    return render_template("app/document.html", message=message)
 
 
 @app.route('/uploaded_file')

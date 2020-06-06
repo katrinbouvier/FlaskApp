@@ -5,16 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="db50d0f6-6aaf-4c3f-b142-2cd793229ed2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/steps/auth_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/features/steps/auth_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/app/document.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/app/document.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/app/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/app/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/translator.db" beforeDir="false" afterPath="$PROJECT_DIR$/translator.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -277,6 +271,7 @@
       <workItem from="1590992354498" duration="6948000" />
       <workItem from="1591088915876" duration="768000" />
       <workItem from="1591250576531" duration="19775000" />
+      <workItem from="1591433844416" duration="8800000" />
     </task>
     <servers />
   </component>
@@ -304,22 +299,22 @@
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="1147" y="190" key="FileChooserDialogImpl/0.0.1920.1032@0.0.1920.1032" timestamp="1590940802313" />
-    <state width="886" height="271" key="GridCell.Tab.0.bottom" timestamp="1591288737585">
+    <state width="1864" height="264" key="GridCell.Tab.0.bottom" timestamp="1591447656120">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="886" height="271" key="GridCell.Tab.0.bottom/0.0.1920.1032@0.0.1920.1032" timestamp="1591288737585" />
-    <state width="886" height="271" key="GridCell.Tab.0.center" timestamp="1591288737585">
+    <state width="1864" height="264" key="GridCell.Tab.0.bottom/0.0.1920.1032@0.0.1920.1032" timestamp="1591447656120" />
+    <state width="1864" height="264" key="GridCell.Tab.0.center" timestamp="1591447656120">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="886" height="271" key="GridCell.Tab.0.center/0.0.1920.1032@0.0.1920.1032" timestamp="1591288737585" />
-    <state width="886" height="271" key="GridCell.Tab.0.left" timestamp="1591288737585">
+    <state width="1864" height="264" key="GridCell.Tab.0.center/0.0.1920.1032@0.0.1920.1032" timestamp="1591447656120" />
+    <state width="1864" height="264" key="GridCell.Tab.0.left" timestamp="1591447656120">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="886" height="271" key="GridCell.Tab.0.left/0.0.1920.1032@0.0.1920.1032" timestamp="1591288737585" />
-    <state width="886" height="271" key="GridCell.Tab.0.right" timestamp="1591288737585">
+    <state width="1864" height="264" key="GridCell.Tab.0.left/0.0.1920.1032@0.0.1920.1032" timestamp="1591447656120" />
+    <state width="1864" height="264" key="GridCell.Tab.0.right" timestamp="1591447656120">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="886" height="271" key="GridCell.Tab.0.right/0.0.1920.1032@0.0.1920.1032" timestamp="1591288737585" />
+    <state width="1864" height="264" key="GridCell.Tab.0.right/0.0.1920.1032@0.0.1920.1032" timestamp="1591447656120" />
     <state width="886" height="314" key="GridCell.Tab.1.bottom" timestamp="1590259371624">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
@@ -348,16 +343,16 @@
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="606" y="67" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1590339346457" />
-    <state x="579" y="295" key="com.intellij.ide.util.TipDialog" timestamp="1591250579184">
+    <state x="579" y="295" key="com.intellij.ide.util.TipDialog" timestamp="1591433870876">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="579" y="295" key="com.intellij.ide.util.TipDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1591250579184" />
+    <state x="579" y="295" key="com.intellij.ide.util.TipDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1591433870876" />
     <state x="1019" y="-1" key="search.everywhere.popup" timestamp="1591286590758">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="1019" y="-1" key="search.everywhere.popup/0.0.1920.1032@0.0.1920.1032" timestamp="1591286590758" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/app$app.coverage" NAME="app Coverage Results" MODIFIED="1591287848896" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/app$app.coverage" NAME="app Coverage Results" MODIFIED="1591447656107" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
