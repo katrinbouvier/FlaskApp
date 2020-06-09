@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% block title %}
+Переводчик
+{% endblock %}
+{% block nav %}
+Переводчик
+{% endblock %}
+
+{% block body %}
+<div class="wrapper">
+    <div class="input-block">
+
+        <table border="0" id="outer-table">
+
+            <tr id="t-header">
+                    <td id="td-first">&#8226 АНГЛИЙСКИЙ</td>
+                    <td id="td-second">&#8226 РУССКИЙ</td>
+            </tr>
+            <tbody>
+                <tr>
+                    <td id="col1" colspan="2">
+                        <form  method="post">
+                            <table id="inner-table">
+                                <tr>
+                                    <td>
+                                        <textarea name="en_text" id="input" class="form-control"></textarea>
+                                     </td>
+
+                                    <td>
+                                        <textarea name="ru_text" id="output" class="form-control">{{data}}
+                                        </textarea>
+                                    </td>
+
+
+                                </tr>
+
+                                <tr>
+                                    <td colspan="3">
+                                        <button class="btn" type="submit">ПЕРЕВЕСТИ</button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div>
+
+        </div>
+        <table id="history-table">
+            <thead>
+                <tr>
+                    <th colspan="2" id="recent">
+                        <p>Недавние переводы</p></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="empty-recent">
+                        <p>Нет недавних переводов</p></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+</div>
+{% endblock %}
