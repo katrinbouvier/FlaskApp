@@ -2,6 +2,9 @@
 {% block title %}
 Переводчик
 {% endblock %}
+{% block nav %}
+Переводчик
+{% endblock %}
 
 {% block body %}
 
@@ -43,15 +46,21 @@
                 </tr>
             </tbody>
         </table>
+
+        <div>
+
+        </div>
         <table id="history-table">
             <thead>
                 <tr>
-                    <th colspan="2"> Недавние переводы</th>
+                    <th colspan="2" id="recent">
+                        <p>Недавние переводы</p></th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td> Нет недавних переводов</td>
+                    <td id="empty-recent">
+                        <p>Нет недавних переводов</p></td>
                 </tr>
             </tbody>
         </table>

@@ -3,9 +3,55 @@
 Избранное
 {% endblock %}
 
+{% block nav %}
+Избранные переводы
+{% endblock %}
+
 {% block body %}
-<h3>
-    Избранные переводы
-</h3>
+<div class="favorites">
+    <table>
+        <tr>
+            <td>
+                <div class="l-container">
+                    {% for elem in left %}
+                    <div class="l" >
+                        <p>
+                            {{elem}}
+                        </p>
+                    </div>
+                    {% endfor %}
+                </div>
+            </td>
+
+            <td>
+                <div class="r-container">
+                    {% for elem in right %}
+                    <div class="r" >
+                        <p>
+                            {{elem}}
+                        </p>
+                    </div>
+                    {% endfor %}
+                </div>
+
+            </td>
+
+            <td>
+               {% for elem in right %}
+                    <div>
+                         <form method="post">
+                            <button id="add-fav">
+                                <img src="static/images/trash.png" alt="Star"
+                                     width="30" title="Удалить из Избранного">
+                            </button>
+                        </form>
+                    </div>
+                {% endfor %}
+            </td>
+
+        </tr>
+    </table>
+
+</div>
 
 {% endblock %}

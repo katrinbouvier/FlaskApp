@@ -3,62 +3,24 @@
 Документ
 {% endblock %}
 
+{% block nav %}
+Перевод документа
+{% endblock %}
+
 {% block body %}
 <script type=text/javascript src="{{ url_for('static', filename='js/jquery-3.5.1.js') }}"></script>
-<!--<script type="text/javascript">-->
-<!--    $(document).ready(function(){-->
-<!-- alert(jQuery.fn.jquery);-->
-<!-- });-->
-<!--</script>-->
-
-
-
-<script>
-    alert("bye")
-</script>
+<!--src="{{url_for('static', filename='js/drag_drop_files.js') }}"-->
 
     <div class="file_upload">
          <div class="droparea">
-             <p>Drop here +</p></div>
-         <div class="tablearea" id="tablearea"></div>
+             {% if message %}
+                <p class="message">{{ message }}</p>
+             {% endif %}
+         </div>
 
-<!--        <script src="{{url_for('static', filename='js/drag_drop_files.js') }}"></script>-->
-        <script type="text/javascript">
-            var dragHandler = function(evt) {
-            evt.preventDefault();
-            var files = evt.originalEvent.dataTransfer.files;
-
-            var formData = new FormData();
-            formData.append("file2upload", files[0]);
-            console.log(files[0]);
-
-            var req = {
-                url: '/document',
-                method: 'POST',
-                processData: false,
-                contentType: false,
-                data: formData
-            };
-
-            var promise = $.ajax(req);
-        };
-
-        var dropHandler = function(evt){
-            evt.preventDefault();
-            var files = evt.originalEvent.dataTransfer.files;
-            console.log(files[0].name);
-        };
-
-        var dropHandlerSet = {
-            dragover: dragHandler,
-            drop: dropHandler
-        };
-
-        $('.droparea').on(dropHandlerSet);
-    </script>
-        {% if message %}
-            <p id="message">{{ message }}</p>
-        {% endif %}
+        <form method="post">
+                <button type="submit" id="trans_btn">ПЕРЕВЕСТИ ФАЙЛ</button>
+        </form>
     </div>
-
+<script type="text/javascript" src="{{url_for('static', filename='js/drag_drop_files.js') }}"></script>
 {% endblock %}

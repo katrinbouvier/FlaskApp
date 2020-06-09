@@ -5,10 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="db50d0f6-6aaf-4c3f-b142-2cd793229ed2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/neuralnet/netinterface.py" beforeDir="false" afterPath="$PROJECT_DIR$/neuralnet/netinterface.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/drag_drop_files.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/drag_drop_files.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/app/document.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/app/document.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/app/favorites.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/app/favorites.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/app/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/app/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/translator.db" beforeDir="false" afterPath="$PROJECT_DIR$/translator.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,9 +71,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Jupyter Notebook" />
-        <option value="HTML File" />
         <option value="Python Script" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -86,23 +95,27 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/static/css" />
+    <property name="database.data.extractors.current.id" value="Tab-separated (TSV)_id" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/images" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="run.code.analysis.last.selected.profile" value="aDefault" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Екатерина\PycharmProjects\app\static\js" />
-      <recent name="C:\Users\Екатерина\PycharmProjects\app" />
-      <recent name="C:\Users\Екатерина\PycharmProjects\app\templates\app" />
-      <recent name="C:\Users\Екатерина\PycharmProjects\app\templates" />
-      <recent name="C:\Users\Екатерина\PycharmProjects\app\images" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Екатерина\PycharmProjects\app\images" />
+      <recent name="C:\Users\Екатерина\PycharmProjects\app\templates\app" />
       <recent name="C:\Users\Екатерина\PycharmProjects\app\static\css" />
       <recent name="C:\Users\Екатерина\PycharmProjects\app\neuralnet" />
       <recent name="C:\Users\Екатерина\PycharmProjects\app\neural-net" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Екатерина\PycharmProjects\app\static\images" />
+      <recent name="C:\Users\Екатерина\PycharmProjects\app\file-storage\temp" />
+      <recent name="C:\Users\Екатерина\PycharmProjects\app\static\js" />
+      <recent name="C:\Users\Екатерина\PycharmProjects\app" />
+      <recent name="C:\Users\Екатерина\PycharmProjects\app\templates\app" />
     </key>
   </component>
   <component name="RunManager" selected="Python.app">
@@ -271,7 +284,10 @@
       <workItem from="1590992354498" duration="6948000" />
       <workItem from="1591088915876" duration="768000" />
       <workItem from="1591250576531" duration="19775000" />
-      <workItem from="1591433844416" duration="8800000" />
+      <workItem from="1591433844416" duration="15298000" />
+      <workItem from="1591597639403" duration="21959000" />
+      <workItem from="1591684449670" duration="21990000" />
+      <workItem from="1591718424059" duration="8890000" />
     </task>
     <servers />
   </component>
@@ -295,64 +311,68 @@
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="484" y="38" key="CommitChangelistDialog2/0.0.1920.1032@0.0.1920.1032" timestamp="1591088966422" />
+    <state x="91" y="91" width="1738" height="850" key="DiffContextDialog" timestamp="1591719206078">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="91" y="91" width="1738" height="850" key="DiffContextDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1591719206078" />
     <state x="1147" y="190" key="FileChooserDialogImpl" timestamp="1590940802313">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="1147" y="190" key="FileChooserDialogImpl/0.0.1920.1032@0.0.1920.1032" timestamp="1590940802313" />
-    <state width="1864" height="264" key="GridCell.Tab.0.bottom" timestamp="1591447656120">
+    <state width="1864" height="204" key="GridCell.Tab.0.bottom" timestamp="1591734512089">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="1864" height="264" key="GridCell.Tab.0.bottom/0.0.1920.1032@0.0.1920.1032" timestamp="1591447656120" />
-    <state width="1864" height="264" key="GridCell.Tab.0.center" timestamp="1591447656120">
+    <state width="1864" height="204" key="GridCell.Tab.0.bottom/0.0.1920.1032@0.0.1920.1032" timestamp="1591734512089" />
+    <state width="1864" height="204" key="GridCell.Tab.0.center" timestamp="1591734512089">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="1864" height="264" key="GridCell.Tab.0.center/0.0.1920.1032@0.0.1920.1032" timestamp="1591447656120" />
-    <state width="1864" height="264" key="GridCell.Tab.0.left" timestamp="1591447656120">
+    <state width="1864" height="204" key="GridCell.Tab.0.center/0.0.1920.1032@0.0.1920.1032" timestamp="1591734512089" />
+    <state width="1864" height="204" key="GridCell.Tab.0.left" timestamp="1591734512089">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="1864" height="264" key="GridCell.Tab.0.left/0.0.1920.1032@0.0.1920.1032" timestamp="1591447656120" />
-    <state width="1864" height="264" key="GridCell.Tab.0.right" timestamp="1591447656120">
+    <state width="1864" height="204" key="GridCell.Tab.0.left/0.0.1920.1032@0.0.1920.1032" timestamp="1591734512089" />
+    <state width="1864" height="204" key="GridCell.Tab.0.right" timestamp="1591734512089">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="1864" height="264" key="GridCell.Tab.0.right/0.0.1920.1032@0.0.1920.1032" timestamp="1591447656120" />
-    <state width="886" height="314" key="GridCell.Tab.1.bottom" timestamp="1590259371624">
+    <state width="1864" height="204" key="GridCell.Tab.0.right/0.0.1920.1032@0.0.1920.1032" timestamp="1591734512089" />
+    <state width="886" height="313" key="GridCell.Tab.1.bottom" timestamp="1591649830786">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="886" height="314" key="GridCell.Tab.1.bottom/0.0.1920.1032@0.0.1920.1032" timestamp="1590259371624" />
-    <state width="886" height="314" key="GridCell.Tab.1.center" timestamp="1590259371624">
+    <state width="886" height="313" key="GridCell.Tab.1.bottom/0.0.1920.1032@0.0.1920.1032" timestamp="1591649830786" />
+    <state width="886" height="313" key="GridCell.Tab.1.center" timestamp="1591649830785">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="886" height="314" key="GridCell.Tab.1.center/0.0.1920.1032@0.0.1920.1032" timestamp="1590259371624" />
-    <state width="886" height="314" key="GridCell.Tab.1.left" timestamp="1590259371623">
+    <state width="886" height="313" key="GridCell.Tab.1.center/0.0.1920.1032@0.0.1920.1032" timestamp="1591649830785" />
+    <state width="886" height="313" key="GridCell.Tab.1.left" timestamp="1591649830785">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="886" height="314" key="GridCell.Tab.1.left/0.0.1920.1032@0.0.1920.1032" timestamp="1590259371623" />
-    <state width="886" height="314" key="GridCell.Tab.1.right" timestamp="1590259371624">
+    <state width="886" height="313" key="GridCell.Tab.1.left/0.0.1920.1032@0.0.1920.1032" timestamp="1591649830785" />
+    <state width="886" height="313" key="GridCell.Tab.1.right" timestamp="1591649830785">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="886" height="314" key="GridCell.Tab.1.right/0.0.1920.1032@0.0.1920.1032" timestamp="1590259371624" />
+    <state width="886" height="313" key="GridCell.Tab.1.right/0.0.1920.1032@0.0.1920.1032" timestamp="1591649830785" />
     <state width="263" height="571" key="HiddenNamespacesPopup" timestamp="1590307437703">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state width="263" height="571" key="HiddenNamespacesPopup/0.0.1920.1032@0.0.1920.1032" timestamp="1590307437703" />
-    <state x="460" y="0" key="SettingsEditor" timestamp="1591010989793">
+    <state x="460" y="0" key="SettingsEditor" timestamp="1591731010136">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="460" y="0" key="SettingsEditor/0.0.1920.1032@0.0.1920.1032" timestamp="1591010989793" />
+    <state x="460" y="0" key="SettingsEditor/0.0.1920.1032@0.0.1920.1032" timestamp="1591731010136" />
     <state x="606" y="67" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1590339346457">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="606" y="67" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1590339346457" />
-    <state x="579" y="295" key="com.intellij.ide.util.TipDialog" timestamp="1591433870876">
+    <state x="579" y="295" key="com.intellij.ide.util.TipDialog" timestamp="1591684449937">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="579" y="295" key="com.intellij.ide.util.TipDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1591433870876" />
-    <state x="1019" y="-1" key="search.everywhere.popup" timestamp="1591286590758">
+    <state x="579" y="295" key="com.intellij.ide.util.TipDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1591684449937" />
+    <state x="539" y="-1" width="840" height="1034" key="search.everywhere.popup" timestamp="1591694480034">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="1019" y="-1" key="search.everywhere.popup/0.0.1920.1032@0.0.1920.1032" timestamp="1591286590758" />
+    <state x="539" y="-1" width="840" height="1034" key="search.everywhere.popup/0.0.1920.1032@0.0.1920.1032" timestamp="1591694480034" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/app$app.coverage" NAME="app Coverage Results" MODIFIED="1591447656107" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/app$app.coverage" NAME="app Coverage Results" MODIFIED="1591732707786" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

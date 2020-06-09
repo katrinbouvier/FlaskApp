@@ -3,5 +3,6 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/neuralnet/shildt-ru-prepared.txt" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/test.txt" charset="windows-1251" />
+    <file url="PROJECT" charset="windows-1251" />
   </component>
 </project>

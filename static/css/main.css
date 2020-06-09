@@ -17,6 +17,7 @@ body {
   /*background: rgb(176, 204, 212);*/
   /*background: #061a25;*/
   background: #0d4b6a;
+  /*background: hotpink;*/
 
   border-radius: 0.5em;
   /*font-family: 'Roboto', sans-serif;*/
@@ -74,7 +75,7 @@ body {
   height: 100px;
 }
 
-#header p {
+#header #main {
   background: #061a25;
   /*background: #0d4b6a;*/
   color: #92bad4;
@@ -88,5 +89,10 @@ body {
   /*margin-top: 10px;*/
   /*margin-bottom: auto;*/
   /*padding-bottom: 10%;*/
-
 }
+
+#header #navig {
+  font-size:18px;
+}
+
+
