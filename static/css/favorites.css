@@ -1,0 +1,53 @@
+.favorites {
+    border-radius: 1.5em;
+    background: #ffffff;
+}
+
+.l {
+    text-align: left;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 1em;
+    background: white;
+    border-radius: 1.5em;
+    margin-top: 10px;
+    width:90%;
+}
+
+.r {
+    text-align: left;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 1em;
+    background: white;
+    border-radius: 1.5em;
+    margin-top: 10px;
+    width:90%;
+}
+
+table {
+    background: #b0ccd4;
+    border-radius: 0.5em;
+    width: 75%;
+    float: right;
+    margin-right: 3em;
+    padding: 10px;
+
+}
+
+table td {
+    padding: 3px;
+}
+
+table #service {
+    text-align: center;
+}
+
+table #add-fav {
+    text-align: center;
+    background: #b0ccd4;
+    width: 100%;
+    height: 100%;
+    margin-top: 35%;
+    margin-bottom: 35%;
+}
