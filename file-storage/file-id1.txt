@@ -1,0 +1,3 @@
+How are you?<>Как твои дела?
+You will not normally override the other two painting methods.<>А два других метода рисования, как правило, переопределять не требуется.
+To prove this, try changing the size of the window.<>Чтобы убедиться в этом, попробуйте изменить размеры окна.
