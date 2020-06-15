@@ -1,4 +1,4 @@
-textarea{
+textarea {
   width: 95%;
   height: 200px;
   resize: none;
@@ -11,9 +11,9 @@ textarea{
   padding: 1em;
 }
 
-table td {
-  text-align: center;
-}
+/*table td {*/
+/*  text-align: center;*/
+/*}*/
 
 #t-header td {
   width:50%;
@@ -78,7 +78,6 @@ table td {
 #image {
   height:20px;
   width:20px;
-  background: hotpink;
 }
 
 #history-table {
@@ -108,4 +107,16 @@ table td {
   font-size: 14px;
   font-family: 'Roboto', sans-serif;
   text-align: left;
+}
+
+table #add-fav {
+  background: #b0ccd4;
+  border-style: none;
+
+}
+
+table #fav-col {
+  vertical-align: top;
+  padding-top: 30px;
+
 }

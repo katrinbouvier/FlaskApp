@@ -3,6 +3,10 @@
 Избранное
 {% endblock %}
 
+{% block email%}
+{{email}}
+{% endblock %}
+
 {% block nav %}
 Избранные переводы
 {% endblock %}
@@ -40,8 +44,8 @@
                {% for elem in right %}
                     <div>
                          <form method="post">
-                            <button id="add-fav">
-                                <img src="static/images/trash.png" alt="Star"
+                            <button id="del-fav">
+                                <img src="{{ url_for('static', filename='images/trash.png') }}" alt="Star"
                                      width="30" title="Удалить из Избранного">
                             </button>
                         </form>

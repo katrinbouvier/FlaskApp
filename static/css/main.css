@@ -71,8 +71,10 @@ body {
 
 
 #header {
-  background: #0d4b6a;
-  height: 100px;
+  /*background: #0d4b6a;*/
+  background: #061a25;
+  height: 80px;
+  margin-bottom: 2%;
 }
 
 #header #main {
@@ -84,7 +86,7 @@ body {
   padding-bottom: 20px;
   padding-left: 20px;
   display: inline-block;
-  width: 100%;
+  width: auto;
   font-family: 'Century Gothic';
   /*margin-top: 10px;*/
   /*margin-bottom: auto;*/
@@ -93,6 +95,18 @@ body {
 
 #header #navig {
   font-size:18px;
+}
+
+#header #email {
+  font-size:17px;
+  padding-top: 25px;
+  padding-bottom: 20px;
+  padding-right: 70px;
+  float: right;
+  width: auto;
+  height: 70px;
+  background: #061a25;
+  color: #92bad4;
 }
 
 

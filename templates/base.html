@@ -3,17 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/mod_index.css')}}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css')}}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/document.css')}}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/favorites.css')}}">
     <title>{% block title %}{% endblock %}</title>
+
 </head>
 
 <body>
 <script type=text/javascript src="{{ url_for('static', filename='js/jquery-3.5.1.js') }}"></script>
 
 <div id="header">
-    <p id="main">Нейронный переводчик &#8594 <samp id="navig"> {% block nav %}{% endblock %}</samp>  </p>
+    <p id="main">Нейронный переводчик &#8594 <samp id="navig">
+        {% block nav %}{% endblock %}
+    </samp></p>
+    <p id="email">{% block email %} {% endblock %}</p>
 </div>
 
 <div class="widget">

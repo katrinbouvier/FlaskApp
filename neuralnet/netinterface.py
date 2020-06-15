@@ -42,7 +42,7 @@ from neuralnet.newnettrain import NetTrain
 
 
 def pass_to_encoder(text):
-    new_text = text.split('.')
+    new_text = text.strip().split('.')
     # # refactor text
     # # phrs_enc = encode_sequences(eng_tokenizer, eng_length,)
     # phrs_enc = encode_sequences(eng_tokenizer, eng_length,

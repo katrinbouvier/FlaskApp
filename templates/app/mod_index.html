@@ -2,6 +2,11 @@
 {% block title %}
 Переводчик
 {% endblock %}
+
+{% block email%}
+{{email}}
+{% endblock %}
+
 {% block nav %}
 Переводчик
 {% endblock %}
@@ -31,12 +36,19 @@
                                         </textarea>
                                     </td>
 
+                                    <td id="fav-col">
+                                        <form method="post">
+                                            <button id="add-fav"><img src="{{ url_for('static', filename='images/heart.png') }}" alt="Heart"
+                                                width="30" title="Добавить в Избранное">
+                                            </button>
+                                        </form>
+                                    </td>
 
                                 </tr>
 
                                 <tr>
-                                    <td colspan="3">
-                                        <button class="btn" type="submit">ПЕРЕВЕСТИ</button>
+                                    <td colspan="2">
+                                        <button class="btn" type="submit">ОЧИСТИТЬ</button>
                                     </td>
                                 </tr>
                             </table>
